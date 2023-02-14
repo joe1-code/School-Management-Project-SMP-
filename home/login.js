@@ -2,34 +2,63 @@ import React from "react";
 import ReactDOM from "react";
 import './login.css';
 import "../header/header";
+//import {TextField}  from "@mui/material";
+import TextField from '@mui/material/TextField';
+import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Link from "@mui/material/Link";
+import { useMediaQuery } from 'react-responsive'
+
 
 function Login(){
+ //const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
+  //const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const isPortrait = useMediaQuery({ query: '(max-width: 360px)' })
+  //const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+
  
  return (
-  <div id="container">
-   <form action="" id="form">
-   <div id="field">
-    <input type="text" name="username" placeholder="username" id="user" />
-    <input type="text" name="Password" placeholder="Password" id="pass"/>
-   <div id="logbutton">
-    <div>
-     <input type="checkbox" />
-     <label htmlFor="remember">remember me</label>
+  <div id="main">
+   <h2 id="vicoba">Sign In to Vicoba App</h2>
+  {isPortrait && <Card id="container-mobile">
+   <div id="wrapper">
+    <TextField
+    fullWidth
+     InputLabelProps={{style:{fontSize: 15}}}
+     size="small" 
+     id="user"
+     label="Username"
+     margin="normal"
+    
+    />
+    <TextField
+    InputLabelProps={{style:{fontSize: 15}}}
+    size="small"
+    id="pass"
+    label="Password"
+    type="password"
+    variant="outlined"
+    margin="normal"
+    fullWidth
+    />
+   </div>
+    
+    <div id="wrap">
+     <button variant="outlined" id="butlog">Login</button>    
     </div>
-    <button id="butlog">Login</button>
-   </div>
-   <div id="links">
-    <a href="">Forgot Password</a>
-    <a href="">Create a new group</a>
-   </div>
-   </div>
-   
-   
-  </form>
+     <h4 id="links">
+     <Link to="" style={{color:"blue"}}>Forgot Password?</Link>
+     <Link to="" style={{color:"blue"}}>Create a new group?</Link>
+    </h4>
+    
+    
   
-   
-
-  </div>
+    
+  </Card>}
+ 
+ </div>
+  
   
  )
 }
