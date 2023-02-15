@@ -5,7 +5,7 @@ import Login from "./home/login";
 import Nopage from "./nopage";
 import Header from "./header/header";
 import RegisterGroup from "./home/registerGroup/registerGroup";
-
+import RegisterMember from "./dashboard/Admin/registerMember";
 function App(){
 return (
   <div>
@@ -13,6 +13,7 @@ return (
  <BrowserRouter>
   <Routes>
      <Route path="/" element={<Login />}/>
+     <Route path="/registerMember" element={<RegisterMember/>}/>
      <Route path="/registerGroup" element={<RegisterGroup />}/>
      <Route path="*" element={<Nopage />}/>
     
