@@ -14,9 +14,9 @@ body{
   padding-top: 2px;
 }
 #container-mobile{
- background-color: white snow;
+ /*background-color: red;*/
  height: 300px;
- width: 70%;
+ width: 98%;
  padding-top: 10px;
  display: flex;
  flex-direction: column;
@@ -46,7 +46,7 @@ background-color: yellow;
 }
 #wrapper{
   /*background-color: yellow;*/
-  width: 75%;
+  width: 95%;
   height: 150px;
   gap: 20px;
 }

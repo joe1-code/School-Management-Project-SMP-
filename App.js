@@ -1,5 +1,6 @@
 import React from "react";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
+//import MyComponent from "./test";
 import Login from "./home/login";
 import Nopage from "./nopage";
 import Header from "./header/header";
