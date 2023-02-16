@@ -8,7 +8,6 @@
  flex-direction: column;
 }
 #container-group{
- background-color: green;
  width: 100%;
  height: 410px;
  border-radius: 10px;
@@ -59,3 +58,11 @@
  background: rgb(69, 69, 191);
  cursor: pointer;
 }
+
+
+/* for desktop ''''''''''''''''''''''''''''''''''''''*/
+
+
+
+/* end for desktop */
+

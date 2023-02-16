@@ -4,8 +4,10 @@ import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import Select from "react-select";
 import './regMember.css';
-
+import { useMediaQuery } from "react-responsive";
 function RegisterMember(){
+  const isPortraitMember= useMediaQuery({ query: '(max-width: 360px)' });
+ 
  const options = [
   {value:'M/Kiti',label:'M/Kiti'},
   {value:'Katibu',label:'Katibu'},
@@ -19,7 +21,7 @@ function RegisterMember(){
   );
  }
  return (
-  <div id="Main-member">
+  <>{isPortraitMember && <div id="Main-member">
     <div id="vicobamember"><h2>Register A Member</h2></div>
    <Card id="card-member">
     <div id="container-member">
@@ -52,7 +54,8 @@ function RegisterMember(){
      <button id="butreg-member" variant="outlined" >Register</button>
     </div>
    </Card>
-  </div>
+  </div>}
+  </>
  )
 }
 

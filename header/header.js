@@ -5,7 +5,7 @@ import pic from'../logo.jpg';
 
 const Header=()=>{
   return (
-   <div id="header"><img src={pic} id='avt'  />  
+   <div id="header" onClick={()=> window.location('/')}><img src={pic} id='avt'  />  
 </div>
   )
  }

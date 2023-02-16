@@ -4,10 +4,11 @@ import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import Select from 'react-select';
 import './regGroup.css';
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useMediaQuery } from 'react-responsive'
+
 
 function RegisterGroup(){
- //const isPortrait = useMediaQuery({ query: '(max-width: 360px)' });
+ const isPortraitGroup = useMediaQuery({ query: '(max-width: 360px)' });
  
  const options = [
   {value:'M/Kiti',label:'M/Kiti'},
@@ -22,10 +23,11 @@ function RegisterGroup(){
   );
  }
  return (
+  <>{isPortraitGroup &&
  <div id="mainGroup">
-  <h2 id="vicobaGroup">Register A Group to Vicoba App</h2>
-  <div id="container-group">
-   <Card >
+   <h2 id="vicobaGroup">Register A Group</h2>
+   <div id="container-group">
+     <Card >
     <div id="card">
      <TextField
       fullWidth
@@ -44,7 +46,7 @@ function RegisterGroup(){
      <TextField
       fullWidth
       label="Admin Full Name"
-      margin="normal"
+         margin="normal"
       size="small"
       InputLabelProps={{type:{fontSize: 15}}}
      />
@@ -67,7 +69,7 @@ function RegisterGroup(){
    </Card>
   </div>
  </div> 
- 
+}</>
  )
 }
 

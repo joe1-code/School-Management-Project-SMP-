@@ -49,7 +49,7 @@ function Login(){
     </div>
      <h4 id="links">
      <Link to="" style={{color:"blue"}}>Forgot Password?</Link>
-     <Link to="" style={{color:"blue"}}>Create a new group?</Link>
+     <Link href="/registerGroup" style={{color:"blue"}}>Create a new group?</Link>
     </h4>
     
     
