@@ -20,6 +20,7 @@ function RegisterMember(){
  }
  return (
   <div id="Main-member">
+    <div id="vicobamember"><h2>Register A Member</h2></div>
    <Card id="card-member">
     <div id="container-member">
      <TextField
@@ -48,7 +49,7 @@ function RegisterMember(){
      </div>
     </div>
     <div id="butdiv-member">
-     <button id="butreg" variant="outlined" >Register</button>
+     <button id="butreg-member" variant="outlined" >Register</button>
     </div>
    </Card>
   </div>
