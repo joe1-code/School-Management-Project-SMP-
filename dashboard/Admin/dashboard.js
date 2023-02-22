@@ -8,7 +8,8 @@ import pic from '../../logo.jpg';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { color } from "@mui/system";
-
+import { Table } from "@mui/material";
+import BasicTable from "../tables/table";
 function Dashboard(){
 const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
 
@@ -65,6 +66,20 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
        <button id="admin-But">Management Panel</button>
       </div>
      </div>
+    </Card>
+    <Card id="card4">
+     <div>
+       <span>report</span>
+       <div id="items">
+         <button id="sp1">Contributors</button>
+         <button id="sp2">Expenditures</button>
+         <button id="sp3">Debits</button>
+         <button id="sp4">Profits</button>
+       </div>
+       <div>
+        
+       </div>
+      </div>
     </Card>
   </div>}
   </>
