@@ -26,8 +26,8 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
       </div>
       <div id="wrap2">
         <div id="names">
-          <span>Juma Kapuya</span>
-          <span>0786454532</span>
+          <span style={{fontSize:18,fontWeight:"bold"}}>Juma Kapuya</span>
+          <span style={{color:"#7B7575",fontSize:14,fontWeight:"bold"}}>0786454532</span>
         </div>
         <div id="settings">
           <SettingsIcon/>
@@ -41,25 +41,29 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
       
         <div id="span1">
           <span id="debts">Debts</span>
-          <span style={{fontSize:13,fontWeight:"bold"}}>10000</span>
+          <span style={{color:"#7B7575",fontSize:14,fontWeight:"bold"}}>10000</span>
         </div>
       
         <div id="span2">
           <span id="next">Next Payment</span>  
-         <span style={{fontSize:13,fontWeight:"bold"}}>March 3 2023</span> 
+         <span style={{color:"#7B7575",fontSize:14,fontWeight:"bold"}}>March 3 2023</span> 
         </div>
       
         <div id="span3">
            <span id="contri">Contribution</span>
-           <span style={{fontSize:13,fontWeight:"bold"}}>300000</span> 
+           <span style={{color:"#7B7575",fontSize:14,fontWeight:"bold"}}>300000</span> 
         </div>
     
      </div>
     </Card>
     <Card id="card3">
-     <div>
-      <button>Pay Debt</button>
-      <button>Management Panel</button>
+     <div id="wrap-but">
+      <div id="but1">
+       <button id="admin-But">Pay Debt</button>
+      </div>
+      <div id="but2">
+       <button id="admin-But">Management Panel</button>
+      </div>
      </div>
     </Card>
   </div>}

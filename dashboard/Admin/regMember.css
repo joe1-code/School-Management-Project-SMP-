@@ -101,11 +101,8 @@
  height: 50px;
  display: flex;
  flex-direction: column;
- font-weight: bold;
- font-size: 18;
  padding-left: 10px;
  padding-top: 10px;
-color: rgb(175, 172, 172);
 }
 #settings{
   background-color: white;
@@ -138,7 +135,7 @@ color: rgb(175, 172, 172);
 #debts{
   font-size: 18;
   font-weight: bold;
-  color: rgb(175, 172, 172);
+  /* color: rgb(175, 172, 172); */
 }
 #span2{
 width: 33%;
@@ -151,7 +148,8 @@ gap: 10px;
 #next{
   font-size: 18;
   font-weight: bold;
-  color: rgb(175, 172, 172);
+  /*color: "#AFACAC"*/
+  
 }
 #span3{
 width: 33%;
@@ -164,5 +162,49 @@ gap: 10px;
 #contri{
   font-size: 18;
   font-weight: bold;
-  color: rgb(175, 172, 172);
+}
+#card3{
+  background-color: white;
+  width: 100%;
+  height: 50px;
+ 
+
+}
+#wrap-but{
+display: flex;
+flex-direction: row;
+background-color: white;
+width: 100%;
+height: 40px;
+padding-top: 10px;
+
+}
+
+#but1{
+  width: 50%;
+  height: 40px;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+}
+#but2{
+  width: 50%;
+  height: 40px;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+}
+
+#admin-But{
+  width: 90%;
+  border-radius: 6px;
+  height: 30px;
+  margin-left: 3px;
+  /* font-weight: bold; */
+  color: white;
+  background: rgb(10, 10, 233);
+}
+#admin-But:hover {
+  background: rgb(69, 69, 191);
+  cursor: pointer;
 }
