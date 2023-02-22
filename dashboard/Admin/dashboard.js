@@ -9,7 +9,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { color } from "@mui/system";
 import { Table } from "@mui/material";
-import BasicTable from "../tables/table";
+import DataTable from "../tables/table";
+
+
 function Dashboard(){
 const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
 
@@ -77,7 +79,7 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
          <button id="sp4">Profits</button>
        </div>
        <div>
-        
+         <DataTable/>
        </div>
       </div>
     </Card>
