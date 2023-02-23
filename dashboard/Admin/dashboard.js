@@ -70,8 +70,8 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
      </div>
     </Card>
     <Card id="card4">
-     <div>
-       <span>report</span>
+     <div id="reportdiv">
+      <div id="report"><span id="spreport">REPORTS</span></div>
        <div id="items">
          <CentredTabs/>
        </div>
