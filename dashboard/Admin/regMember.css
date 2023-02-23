@@ -221,31 +221,33 @@ padding-top: 10px;
   flex-direction: row; 
 }
 #sp1{
-  width: 25%;
+  /* width: 25%; */
   height: 30px;
-  background-color: blue;
+  /* background-color: purple; */
   color: white;
   border-radius: 6px;
   margin-left: 3px;
 }
 #sp2{
- width: 25%;
+ /* width: 25%; */
  height: 30px;
- background-color: blue;
+ /* background-color: orange; */
  color: white;
  border-radius: 6px;
 }
 #sp3{
-  width: 25%;
+  /* width: 25%; */
   height: 30px;
-  background-color: blue;
-  color: white;
+  /* background-color: peru; */
+  color: black;
   border-radius: 6px;
+  font-size: 13;
+  font-weight: bolder;
 }
 #sp4{
-  width: 25%;
+  /* width: 25%; */
   height: 30px;
-  background-color: blue;
+  /* background-color: gold; */
   color: white;
   border-radius: 6px;
   margin-right: 3px;

@@ -10,7 +10,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import { color } from "@mui/system";
 import { Table } from "@mui/material";
 import DataTable from "../tables/table";
-
+import CentredTabs from "./tabs";
 
 function Dashboard(){
 const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
@@ -73,10 +73,7 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
      <div>
        <span>report</span>
        <div id="items">
-         <button id="sp1">Contributors</button>
-         <button id="sp2">Expenditures</button>
-         <button id="sp3">Debits</button>
-         <button id="sp4">Profits</button>
+         <CentredTabs/>
        </div>
        <div>
          <DataTable/>
