@@ -3,7 +3,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Login from "./home/login";
 //import Index from "./home";
 import Dashboard from "./dashboard/Admin/dashboard";
-import ManagementPanel from "./dashboard/Admin/management";
+import ManagementPanel from "./dashboard/Admin/ManagePanel/management";
 
 function App(){
 return (
