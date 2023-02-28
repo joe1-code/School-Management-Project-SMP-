@@ -11,6 +11,7 @@ import { color } from "@mui/system";
 import { Table } from "@mui/material";
 import DataTable from "../tables/table";
 import CentredTabs from "./tabs";
+import Link from "@mui/material/Link";
 
 function Dashboard(){
 const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
@@ -65,7 +66,7 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
        <button id="admin-But">Pay Debt</button>
       </div>
       <div id="but2">
-       <button id="admin-But">Management Panel</button>
+       <Link href="/panel"><button id="admin-But" >Management Panel</button></Link> 
       </div>
      </div>
     </Card>

@@ -2,44 +2,53 @@ import React from "react";
 import ReactDOM from "react";
 import { useMediaQuery } from "react-responsive";
 import Card from "@mui/material/Card";
+import './manage.css';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import WindowIcon from '@mui/icons-material/Window';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import { color } from "@mui/system";
+
 function ManagementPanel(){
  const isPortraitPanel = useMediaQuery({ query: '(max-width: 360px)' });
 
+
  return (
   
-   <>
-   {isPortraitPanel && <Card id="wrap">
+  <>
+   {isPortraitPanel && <div id="panCont">
+    <Card id="wrap">
     <div id="container1">
-     <Card>
-     <div>
-      <span>Manage Members</span>
-     </div>
+     <Card id="element">
+     
+      <PeopleAltIcon />
+      <span>Members</span>
+     
     </Card>
-    <Card>
-     <div>
-      <span>Rules&Regulations</span>
-     </div>
+    <Card id="element">
+     
+      <MenuBookIcon />
+      <span>Regulations</span>
+     
     </Card>
     </div>
     <div id="container2">
-   <Card>
-     <div>
-      <span>Construct</span>
-     </div>
-    </Card>
-    <Card>
-     <div>
+   <Card id="element">
+     <ConstructionIcon />
+     <span>Criteria</span>     
+   </Card>
+    <Card id="element">
+      <WindowIcon />
       <span>Window</span>
-     </div>
+     
     </Card>
     </div>
    </Card>
+   
+  
     
-   }
-  
+    </div>}
   </>
-  
-  )
-}
-
+ )
+   }
 export default ManagementPanel;
