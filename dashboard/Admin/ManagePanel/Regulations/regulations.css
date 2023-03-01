@@ -1,0 +1,51 @@
+#area{
+ background-color: red;
+ width: 100%;
+ height: 400px;
+}
+
+#TextArea-wrapper{
+ background-color: green;
+ width: 100%;
+ height: 350px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+#text{
+width: 95%;
+height: 300px;
+background-color: yellow;
+padding-top: 10px;
+}
+#field{
+ background-color: blue;
+ width: 98%;
+ height: 250px;
+}
+
+#regu{
+ background-color: white;
+ display: flex;
+ flex-direction: column;
+ grid-area: 15px;
+ width: 100%;
+ height: 400px;
+ padding-left: 15px;
+}
+
+#head{
+ display: flex;
+ justify-content: center;
+ padding-top: 10px;
+ width: 100%;
+ height: 30px;
+ font-size: 18;
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: bold;
+}
+#span{
+ display: flex;
+ gap: 20px;
+}

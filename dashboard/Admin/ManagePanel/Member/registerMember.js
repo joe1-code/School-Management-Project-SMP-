@@ -3,7 +3,7 @@ import ReactDOM from "react";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import Select from "react-select";
-import './regMember.css';
+import './members.css';
 import { useMediaQuery } from "react-responsive";
 function RegisterMember(){
   const isPortraitMember= useMediaQuery({ query: '(max-width: 360px)' });

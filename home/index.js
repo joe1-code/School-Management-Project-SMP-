@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
-import RegisterMember from "../dashboard/Admin/registerMember";
+import RegisterMember from "../dashboard/Admin/ManagePanel/Member/registerMember";
 import Header from "../header/header";
 import Nopage from "../nopage";
 import Login from "./login";
