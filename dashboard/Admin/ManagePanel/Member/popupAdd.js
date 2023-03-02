@@ -1,7 +1,4 @@
-import React from 'react';
-import * as react from 'react'
-import useState from "react";
-import ReactDOM from "react";
+import {useState} from "react";
 import Dialog from "@mui/material/Dialog";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -9,7 +6,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import RegisterMember from './registerMember';
 
 function PopupForm(){
- const [Open, setOpen]= React.useState(false);
+ const [Open, setOpen]= useState(false);
  
  const handleopen=()=>{
   setOpen(true);
@@ -23,7 +20,7 @@ function PopupForm(){
   <Button variant="outlined" onClick={handleopen}>
     Add Member
   </Button>
-  <Dialog  onClose={handleclose}>
+  <Dialog open={Open} onClose={handleclose}>
    <DialogTitle>Add Member</DialogTitle>
    <TextField
     fullWidth
