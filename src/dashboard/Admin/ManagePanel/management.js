@@ -14,7 +14,6 @@ function ManagementPanel(){
  const isPortraitPanel = useMediaQuery({ query: '(max-width: 360px)' });
  const navigate = useNavigate();
  function handleClick(url){
-  console.log('nnnnnnn',url)
    navigate(url)
  }
 
