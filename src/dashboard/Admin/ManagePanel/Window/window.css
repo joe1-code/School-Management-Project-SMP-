@@ -1,27 +1,24 @@
 #container{
- background-color: purple;
+ background-color: white;
  display: flex;
  justify-content: center;
-}
-#wrap{
- background-color: aqua;
  width: 100%;
- height: 580px;
+ height: 600px;
  display: flex;
- justify-content: center;
- 
+ align-items: center;
 }
+
 #wrap-div{
- background-color: yellow;
+ /* background-color: yellow; */
  width: 97%;
- height: 560px;
+ height: 580px;
  display: flex;
  flex-direction: column;
  justify-content: center;
  gap: 8px;
 }
 #windowBut-div{
- background-color: red;
+ /* background-color: red; */
  width: 100%;
  height: 50px;
  display: flex;

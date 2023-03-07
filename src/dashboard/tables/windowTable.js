@@ -30,7 +30,7 @@ const rows=[
 function WindowDataTable(){
  return (
  <TableContainer component={Paper}>
-  <Table sx={{minWidth: 500}} aria-label="simple-table">
+  <Table sx={{minWidth: 380}} aria-label="simple-table">
     <TableHead>
       <TableRow>
        <TableCell style={{fontSize:16,fontWeight:"bold"}}>S/N</TableCell>
