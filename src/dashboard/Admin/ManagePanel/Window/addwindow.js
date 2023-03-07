@@ -12,14 +12,16 @@ function AddWindow(){
 
  return (
  <>
-  {isPortraitAddwindow && <Card>
-   <Card id='windowBut-div'>
-    <div id='div'><button id='window-but'>Add Window</button></div>
-   </Card>
-   <Card>
-    <WindowDataTable />
-   </Card>
-  </Card>}
+  {isPortraitAddwindow && <div id='container'> <Card id='wrap'>
+   <div id='wrap-div'>
+    <Card id='windowBut-div'>
+     <div id='div'><button id='window-but' variant='outlined'>Add Window</button></div>
+    </Card>
+    <Card>
+     <WindowDataTable />
+    </Card>
+   </div>
+  </Card></div>}
  </>
   
  )
