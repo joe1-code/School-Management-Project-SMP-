@@ -32,7 +32,9 @@ function AddwindowTable(){
  <TableContainer component={Paper}>
   <Table sx={{minWidth: 250}} aria-label="simple-table">
     <TableHead>
-     <Typography>Members</Typography>
+     <div style={{background:"green",display:"flex",alignItems:"center"}}>
+      <Typography >Members</Typography>
+     </div>
       <TableRow>
        <TableCell style={{fontSize:16,fontWeight:"bold"}}>S/N</TableCell>
        <TableCell style={{fontSize:16,fontWeight:"bold"}}>Names</TableCell>

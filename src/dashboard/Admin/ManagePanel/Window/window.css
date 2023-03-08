@@ -18,7 +18,7 @@
  gap: 8px;
 }
 #windowBut-div{
- /* background-color: red; */
+ background-color: red;
  width: 100%;
  height: 50px;
  display: flex;
@@ -43,4 +43,20 @@
 #window-but:hover{
  background: rgb(69, 69, 191);
  cursor: pointer;
+}
+
+/*--------------------------------------------window.js--------------------------------------*/
+contain{
+ /* background-color: green; */
+ width: 100%;
+ height: 500px;
+}
+#window-wraper{
+ background-color: orange;
+ width: 100%;
+ height: 500px;
+ display: flex;
+ flex-direction: column;
+ /* justify-content: center; */
+ align-items: center;
 }
