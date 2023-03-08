@@ -16,7 +16,7 @@ function AddWindow(){
    <div id='wrap-div'>
     <Card id='windowBut-div'>
      {/* <div id='div'><button id='window-but' variant='outlined'>Add Window</button></div> */}
-     <PopupWindow/>
+     <div id='div'><PopupWindow/></div>
     </Card>
     <Card>
      <WindowDataTable />

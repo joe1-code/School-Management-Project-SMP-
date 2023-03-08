@@ -1,14 +1,10 @@
 import React from "react";
-import ReactDOM from "react";
 import Card from "@mui/material/Card";
 import {useMediaQuery} from "react-responsive";
 import './regMember.css';
-import Header from "../../header/header";
 import pic from '../../logo.jpg';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
-import { color } from "@mui/system";
-import { Table } from "@mui/material";
 import DataTable from "../tables/table";
 import CentredTabs from "./tabs";
 import Link from "@mui/material/Link";
@@ -63,10 +59,10 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
     <Card id="card3">
      <div id="wrap-but">
       <div id="but1">
-       <button id="admin-But">Pay Debt</button>
+       <button id="debt-But">Pay Debt</button>
       </div>
       <div id="but2">
-       <Link href="/panel"><button id="admin-But" >Management Panel</button></Link> 
+       <Link href="/panel"><button id="admin-But" >Management</button></Link> 
       </div>
      </div>
     </Card>

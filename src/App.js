@@ -21,7 +21,7 @@ return (
       <Route path="/panel" element={<ManagementPanel />}/>
       <Route path="/members" element={<Member />}/>
       <Route path="/regulations" element={<Regulations />}/>
-      <Route path="/addwindow" element={<AddWindow />}/>
+      <Route path="/window" element={<AddWindow />}/>
 
       </Routes>
 

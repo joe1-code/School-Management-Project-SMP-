@@ -45,11 +45,11 @@ function PopupWindow(){
            size="small"
            InputLabelProps={{type:{fontSize: 15}}}
           />
-          <div id="">
+          <div id="addwind">
            <AddwindowTable/>
           </div>
-          <DialogActions id="reg_butdiv">
-           <button id="window_but" onClick={()=>handleclose(true)}>Save</button>
+          <DialogActions id="wind_butdiv">
+           <button id="wind_but" onClick={()=>handleclose(true)}>Save</button>
           </DialogActions> 
         </DialogContent>
         

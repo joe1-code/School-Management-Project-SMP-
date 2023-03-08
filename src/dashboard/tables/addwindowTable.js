@@ -9,7 +9,7 @@ import Paper from "@mui/material/Paper";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CreateIcon from '@mui/icons-material/Create';
 import Typography from '@mui/material/Typography';
-
+import '../../dashboard/Admin/ManagePanel/Window/window.css';
 
 
 function AddwindowData(id,names,participate){
@@ -30,10 +30,10 @@ const rows=[
 function AddwindowTable(){
  return (
  <TableContainer component={Paper}>
-  <Table sx={{minWidth: 250}} aria-label="simple-table">
+  <Table sx={{minWidth: 280}} aria-label="simple-table">
     <TableHead>
-     <div style={{background:"green",display:"flex",alignItems:"center"}}>
-      <Typography >Members</Typography>
+     <div id='tabletitle' >
+      <Typography style={{fontSize:18,fontWeight:"bold"}} >Members</Typography>
      </div>
       <TableRow>
        <TableCell style={{fontSize:16,fontWeight:"bold"}}>S/N</TableCell>

@@ -24,10 +24,8 @@ function ManagementPanel(){
     <Card id="wrap">
     <div id="container1">
      <Card id="element" onClick={()=>handleClick("/members")}>
-     
       <PeopleAltIcon />
       <span>Members</span>
-     
     </Card>
     <Card id="element" onClick={()=>handleClick("/regulations")}>
      
@@ -41,7 +39,7 @@ function ManagementPanel(){
      <ConstructionIcon />
      <span>Criteria</span>     
    </Card>
-    <Card id="element">
+    <Card id="element" onClick={()=>handleClick("/window")}>
       <WindowIcon />
       <span>Window</span>
      
