@@ -1,13 +1,11 @@
 import React from "react";
-import ReactDOM from "react";
 import { useMediaQuery } from "react-responsive";
 import Card from "@mui/material/Card";
 import './manage.css';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import PaymentIcon from "@mui/icons-material/Payment";
 import WindowIcon from '@mui/icons-material/Window';
-import ConstructionIcon from '@mui/icons-material/Construction';
-import { color } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 
 function ManagementPanel(){
@@ -36,8 +34,8 @@ function ManagementPanel(){
     </div>
     <div id="container2">
    <Card id="element">
-     <ConstructionIcon />
-     <span>Criteria</span>     
+     <PaymentIcon />
+     <span>Accountant</span>     
    </Card>
     <Card id="element" onClick={()=>handleClick("/window")}>
       <WindowIcon />

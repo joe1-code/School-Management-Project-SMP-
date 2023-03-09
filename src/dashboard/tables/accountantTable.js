@@ -7,47 +7,51 @@ import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import Paper from "@mui/material/Paper";
 import Typography from '@mui/material/Typography';
-import '../../dashboard/Admin/ManagePanel/Window/window.css';
 
 
-function AddwindowData(id,names,participate){
- return {id,names,participate};
+function Account(id,names,Pending,debt,action){
+ return {id,names,Pending,debt,action};
 }
 
 const rows=[
- AddwindowData(1,'Ally Juma'),
- AddwindowData(2,'Addul Faiza'),
- AddwindowData(3,'Yohana Tajiri'),
- AddwindowData(4,'Konde Boy'),
- AddwindowData(5,'Diana Karume'),
- AddwindowData(6,'Kaija Muga'),
- AddwindowData(7,'Patrick Ndizi')
+ Account(1,'Ally Juma',7000,3000),
+ Account(2,'Addul Faiza',4000,2000),
+ Account(3,'Yohana Tajiri',5000,1000),
+ Account(4,'Konde Boy',7004,3000),
+ Account(5,'Diana Karume',8000,9000),
+ Account(6,'Kaija Muga',400,7855),
+ Account(7,'Patrick Ndizi',6000,2000)
   
 ];
 
-function AddwindowTable(){
+function AccountTable(){
  return (
  <TableContainer component={Paper}>
   <Table sx={{minWidth: 280}} aria-label="simple-table">
     <TableHead>
-     <div id='tabletitle' >
-      <Typography style={{fontSize:18,fontWeight:"bold"}} >Members</Typography>
+     <div id='accounttitle' >
+      <Typography style={{fontSize:18,fontWeight:"bold"}} >PENDING</Typography>
      </div>
       <TableRow>
        <TableCell style={{fontSize:16,fontWeight:"bold"}}>S/N</TableCell>
        <TableCell style={{fontSize:16,fontWeight:"bold"}}>Names</TableCell>
-       <TableCell align="right" style={{fontSize:16,fontWeight:"bold"}}>Participate</TableCell>
+       <TableCell style={{fontSize:16,fontWeight:"bold"}}>Pending</TableCell>
+       <TableCell style={{fontSize:16,fontWeight:"bold"}}>Debt</TableCell>
+       <TableCell style={{fontSize:16,fontWeight:"bold"}}>Action</TableCell>
+
       </TableRow>
     </TableHead>
     <TableBody>
      {rows.map((row)=>(
       <TableRow
-       key={row.startcycle}
+       key={row.names}
        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
       >
         <TableCell align='right'>{row.id}</TableCell>
        <TableCell component="th" scope="row">{row.names}</TableCell>
-       <TableCell align="right">{row.participate}</TableCell>
+       <TableCell align="right">{row.Pending}</TableCell>
+       <TableCell align="right">{row.debt}</TableCell>
+       <TableCell align="right">{row.action}</TableCell>
       </TableRow>
      )
      )}
@@ -58,4 +62,4 @@ function AddwindowTable(){
   )
 }
 
-export default AddwindowTable;
+export default AccountTable;
