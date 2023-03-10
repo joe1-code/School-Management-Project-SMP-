@@ -8,9 +8,10 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
 import { forwardRef } from "react";
 import Button from "@mui/material/Button";
+import DialogTitle from "@mui/material/DialogTitle";
 
 const Transition=forwardRef(function Transition(props,Ref){
-  return (<Slide direction="up" ref={Ref} {...props}/>);
+  return (<Slide direction="down" ref={Ref} {...props}/>);
  })
  
 function Approve(){
@@ -36,14 +37,15 @@ function Approve(){
   onClose={handleClose}
   aria-describedby="alert-dialog-slide-description"
  >
+  <DialogTitle>{"Pending Payments."}</DialogTitle>
   <DialogContent>
    <DialogContentText id="alert-dialog-slide-description">
-    Please approve the paid transactions.
+    Please approve the pending transactions.
    </DialogContentText>
   </DialogContent>
   <DialogActions>
    <Button onClick={handleClose}>Approve</Button>
-   <Button onClick={handleClose}>Disapprove</Button>
+   <Button onClick={handleClose}>Reject</Button>
   </DialogActions>
  </Dialog>
  </>

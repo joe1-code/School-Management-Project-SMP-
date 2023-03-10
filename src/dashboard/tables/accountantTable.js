@@ -14,7 +14,7 @@ function Account(id,names,Pending,debt,action){
  return {id,names,Pending,debt,action};
 }
 
-const act=(<div id='approvediv'><Approve id="approve"/></div>);
+const act=(<div id='approvediv'><Approve /></div>);
 
 const rows=[
  Account(1,'Ally Juma',7000,3000,act),
