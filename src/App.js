@@ -10,6 +10,7 @@ import Regulations from "./dashboard/Admin/Panel/Regulations/regulations";
 import AddWindow from "./dashboard/Admin/Panel/Window/addwindow";
 import AccountantPanel from "./dashboard/Admin/Panel/Accountant/Accountant";
 import Approve from "./dashboard/Admin/Panel/Accountant/approve";
+import Debt from "./dashboard/Admin/ManagePanel/paydebt";
 
 function App(){
 return (
@@ -18,6 +19,7 @@ return (
       <Route path="/Home" element={<Index/>}/>
       <Route path="/registerGroup" element={<RegisterGroup />}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/paydebt" element={<Debt/>}/>
       <Route path="/panel" element={<ManagementPanel />}/>
       <Route path="/members" element={<Member />}/>
       <Route path="/regulations" element={<Regulations />}/>

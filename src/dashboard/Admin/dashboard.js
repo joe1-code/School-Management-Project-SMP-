@@ -8,6 +8,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import DataTable from "../tables/table";
 import CentredTabs from "./tabs";
 import Link from "@mui/material/Link";
+import Debt from "./ManagePanel/paydebt";
 
 function Dashboard(){
 const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
@@ -58,12 +59,12 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
     </Card>
     <Card id="card3">
      <div id="wrap-but">
-      <div id="but1">
-       <button id="debt-But">Pay Debt</button>
-      </div>
-      <div id="but2">
-       <Link href="/panel"><button id="admin-But" >Management</button></Link> 
-      </div>
+        <div id="but1">
+         <Debt />
+        </div>
+        <div id="but2">
+         <Link href="/panel"><button id="admin-But" >Management</button></Link> 
+        </div>
      </div>
     </Card>
     <Card id="card4">

@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import DialogTitle from "@mui/material/DialogTitle";
 
 const Transition=forwardRef(function Transition(props,Ref){
-  return (<Slide direction="down" ref={Ref} {...props}/>);
+  return (<Slide direction="up" ref={Ref} {...props}/>);
  })
  
 function Approve(){
