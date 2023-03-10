@@ -7,20 +7,22 @@ import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import Paper from "@mui/material/Paper";
 import Typography from '@mui/material/Typography';
-
+import '../../dashboard/Admin/Panel/Accountant/accountant.css';
 
 function Account(id,names,Pending,debt,action){
  return {id,names,Pending,debt,action};
 }
 
+const act=(<div id='approvediv'><button id='approve'>Approve</button></div>);
+
 const rows=[
- Account(1,'Ally Juma',7000,3000),
- Account(2,'Addul Faiza',4000,2000),
- Account(3,'Yohana Tajiri',5000,1000),
- Account(4,'Konde Boy',7004,3000),
- Account(5,'Diana Karume',8000,9000),
- Account(6,'Kaija Muga',400,7855),
- Account(7,'Patrick Ndizi',6000,2000)
+ Account(1,'Ally Juma',7000,3000,act),
+ Account(2,'Addul Faiza',4000,2000,act),
+ Account(3,'Yohana Tajiri',5000,1000,act),
+ Account(4,'Konde Boy',7004,3000,act),
+ Account(5,'Diana Karume',8000,9000,act),
+ Account(6,'Kaija Muga',400,7855,act),
+ Account(7,'Patrick Ndizi',6000,2000,act)
   
 ];
 
@@ -29,7 +31,7 @@ function AccountTable(){
  <TableContainer component={Paper}>
   <Table sx={{minWidth: 280}} aria-label="simple-table">
     <TableHead>
-     <div id='accounttitle' >
+     <div class='acctable'>
       <Typography style={{fontSize:18,fontWeight:"bold"}} >PENDING</Typography>
      </div>
       <TableRow>

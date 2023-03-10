@@ -1,12 +1,8 @@
 import React from "react";
-import ReactDOM from "react";
 import './login.css';
 import "../header/header";
-//import {TextField}  from "@mui/material";
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Link from "@mui/material/Link";
 import { useMediaQuery } from 'react-responsive'
 

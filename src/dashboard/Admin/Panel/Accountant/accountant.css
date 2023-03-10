@@ -9,6 +9,13 @@
  font-size: 18;
  font-weight: bold;
 }
+#accwrap{
+ background-color: white;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ gap: 7px;
+}
 #acc1{
  background-color: white;
  display: flex;
@@ -40,4 +47,27 @@
  width: 30%;
  height: 50px;
  gap: 8px;
+}
+.acctable{
+ width: 410%;
+ height: 30px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+#approvediv{
+ background-color: white;
+ width: 100%;
+ height: 30px;
+ display: flex;
+ align-items: center;
+ justify-content: start;
+}
+#approve{
+ width: 100%;
+ border-radius: 6px;
+ height: 30px;
+ margin-left: 3px;
+ color: white;
+ background: rgb(10, 10, 233);
 }

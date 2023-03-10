@@ -7,7 +7,7 @@ import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import Paper from "@mui/material/Paper";
 import Typography from '@mui/material/Typography';
-import '../../dashboard/Admin/ManagePanel/Window/window.css';
+import '../Admin/Panel/Window/window.css';
 
 
 function AddwindowData(id,names,participate){

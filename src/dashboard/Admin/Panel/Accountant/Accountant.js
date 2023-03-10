@@ -11,6 +11,8 @@ function AccountantPanel(){
   <Card>
    <div>
     <div id="acctitle"><span>WINDOW 100</span></div>
+    <div id="accwrap">
+     <div>
     <Card id="acc1">
      <div id="div11">
       <span style={{fontSize:18,fontWeight:"bold"}}>Start</span>
@@ -39,8 +41,10 @@ function AccountantPanel(){
       <span style={{color:"#7B7575",fontSize:14,fontWeight:"bold"}}>200,000</span>
       </div>
     </Card>
-    <div>
+    </div>
+    <div id="acctable">
      <AccountTable/>
+    </div>
     </div>
    </div>
    
