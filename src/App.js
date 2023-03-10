@@ -9,6 +9,7 @@ import Member from "./dashboard/Admin/Panel/Member/members";
 import Regulations from "./dashboard/Admin/Panel/Regulations/regulations";
 import AddWindow from "./dashboard/Admin/Panel/Window/addwindow";
 import AccountantPanel from "./dashboard/Admin/Panel/Accountant/Accountant";
+import Approve from "./dashboard/Admin/Panel/Accountant/approve";
 
 function App(){
 return (
@@ -22,7 +23,8 @@ return (
       <Route path="/regulations" element={<Regulations />}/>
       <Route path="/window" element={<AddWindow />}/>
       <Route path="/accountant" element={<AccountantPanel />}/>
-      </Routes>
+      <Route path="/approve" element={<Approve/>}/>
+     </Routes>
 
   </div>
 

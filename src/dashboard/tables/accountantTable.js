@@ -8,12 +8,13 @@ import TableCell from "@mui/material/TableCell";
 import Paper from "@mui/material/Paper";
 import Typography from '@mui/material/Typography';
 import '../../dashboard/Admin/Panel/Accountant/accountant.css';
+import Approve from '../Admin/Panel/Accountant/approve';
 
 function Account(id,names,Pending,debt,action){
  return {id,names,Pending,debt,action};
 }
 
-const act=(<div id='approvediv'><button id='approve'>Approve</button></div>);
+const act=(<div id='approvediv'><Approve id="approve"/></div>);
 
 const rows=[
  Account(1,'Ally Juma',7000,3000,act),

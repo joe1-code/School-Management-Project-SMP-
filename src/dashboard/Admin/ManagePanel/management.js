@@ -33,7 +33,7 @@ function ManagementPanel(){
     </Card>
     </div>
     <div id="container2">
-   <Card id="element">
+   <Card id="element" onClick={()=>handleClick("/accountant")}>
      <PaymentIcon />
      <span>Accountant</span>     
    </Card>
