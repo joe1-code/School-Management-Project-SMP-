@@ -18,14 +18,15 @@ return (
      <Routes>
       <Route path="/Home" element={<Index/>}/>
       <Route path="/registerGroup" element={<RegisterGroup />}/>
-      <Route path="/dashboard" element={<Dashboard/>}/>
-      <Route path="/paydebt" element={<Debt/>}/>
-      <Route path="/panel" element={<ManagementPanel />}/>
-      <Route path="/members" element={<Member />}/>
-      <Route path="/regulations" element={<Regulations />}/>
-      <Route path="/window" element={<AddWindow />}/>
-      <Route path="/accountant" element={<AccountantPanel />}/>
-      <Route path="/approve" element={<Approve/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}>
+        <Route path="/paydebt" element={<Debt/>}/>
+        <Route path="/panel" element={<ManagementPanel />}/>
+        <Route path="/members" element={<Member />}/>
+        <Route path="/regulations" element={<Regulations />}/>
+        <Route path="/window" element={<AddWindow />}/>
+        <Route path="/accountant" element={<AccountantPanel />}/>
+        <Route path="/approve" element={<Approve/>}/>
+        </Route>
      </Routes>
 
   </div>

@@ -78,6 +78,7 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
        </div>
       </div>
     </Card>
+    
   </div>}
   </>
  );
