@@ -12,7 +12,6 @@ import AccountantPanel from "./dashboard/Admin/Panel/Accountant/Accountant";
 import Approve from "./dashboard/Admin/Panel/Accountant/approve";
 import Debt from "./dashboard/Admin/ManagePanel/paydebt";
 import Reset from "./home/forgotPassword/resetpass";
-
 function App(){
 return (
   <div>

@@ -8,20 +8,21 @@ import TableCell from "@mui/material/TableCell";
 import Paper from "@mui/material/Paper";
 import Typography from '@mui/material/Typography';
 import '../Admin/Panel/Window/window.css';
-
+import Checkboxes from '../Admin/Panel/Window/checkbox';
 
 function AddwindowData(id,names,participate){
  return {id,names,participate};
 }
+const checks=(<Checkboxes/>);
 
 const rows=[
- AddwindowData(1,'Ally Juma'),
- AddwindowData(2,'Addul Faiza'),
- AddwindowData(3,'Yohana Tajiri'),
- AddwindowData(4,'Konde Boy'),
- AddwindowData(5,'Diana Karume'),
- AddwindowData(6,'Kaija Muga'),
- AddwindowData(7,'Patrick Ndizi')
+ AddwindowData(1,'Ally Juma',checks),
+ AddwindowData(2,'Addul Faiza',checks),
+ AddwindowData(3,'Yohana Tajiri',checks),
+ AddwindowData(4,'Konde Boy',checks),
+ AddwindowData(5,'Diana Karume',checks),
+ AddwindowData(6,'Kaija Muga',checks),
+ AddwindowData(7,'Patrick Ndizi',checks)
   
 ];
 
