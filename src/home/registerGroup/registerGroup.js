@@ -57,6 +57,20 @@ function RegisterGroup(){
       size="small"
       InputLabelProps={{type:{fontSize: 15}}}
      />
+     <TextField
+      fullWidth
+      label="Password"
+      margin="normal"
+      size="small"
+      InputLabelProps={{type:{fontSize: 15}}}
+     />
+     <TextField
+      fullWidth
+      label="Confirm Password"
+      margin="normal"
+      size="small"
+      InputLabelProps={{type:{fontSize: 15}}}
+     />
      <div id="opt">
        <Opt />
      </div>

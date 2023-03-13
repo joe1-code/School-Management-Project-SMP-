@@ -7,12 +7,15 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import DataTable from "../tables/table";
 import CentredTabs from "./tabs";
-import Link from "@mui/material/Link";
+import { useNavigate } from "react-router-dom";
 import Debt from "./ManagePanel/paydebt";
 
 function Dashboard(){
-const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
-
+ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
+ const navigate=useNavigate();
+ function navigation(url){
+  navigate(url);
+ }
  return (
   <>
    {isPortraitDashboard && <div>
@@ -63,7 +66,7 @@ const isPortraitDashboard = useMediaQuery({ query: '(max-width: 360px)' });
          <Debt />
         </div>
         <div id="but2">
-         <Link href="/panel"><button id="admin-But" >Management</button></Link> 
+         <button id="admin-But" onClick={()=>navigation("/panel")}>Management</button> 
         </div>
      </div>
     </Card>
