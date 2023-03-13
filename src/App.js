@@ -11,6 +11,7 @@ import AddWindow from "./dashboard/Admin/Panel/Window/addwindow";
 import AccountantPanel from "./dashboard/Admin/Panel/Accountant/Accountant";
 import Approve from "./dashboard/Admin/Panel/Accountant/approve";
 import Debt from "./dashboard/Admin/ManagePanel/paydebt";
+import Reset from "./home/forgotPassword/resetpass";
 
 function App(){
 return (
@@ -27,6 +28,7 @@ return (
       <Route path="/window" element={<AddWindow />}/>
       <Route path="/accountant" element={<AccountantPanel />}/>
       <Route path="/approve" element={<Approve/>}/>
+      <Route path="/resetpassword" element={<Reset />}/>
     </Routes>
 
   </div>

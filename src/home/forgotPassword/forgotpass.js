@@ -2,8 +2,14 @@ import React from "react";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import './forgotpass.css';
+import { useNavigate } from "react-router-dom";
+
 
 function Passcode(){
+  const navigation=useNavigate();
+ function navigate(url){
+  navigation(url)
+ }
  return (
   <>
     <div id="forgottitle" style={{color:"#7B7575"}}><h3>Password recovery</h3></div>
@@ -19,7 +25,7 @@ function Passcode(){
      />
     </div>
     
-    <button id="forgotbut">Submit</button>
+    <button id="forgotbut" onClick={()=>navigate("/resetpassword")}>Submit</button>
    </Card>
    </>
  ) 

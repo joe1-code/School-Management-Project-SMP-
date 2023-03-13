@@ -17,7 +17,7 @@
 
 }
 #forgotdiv{
- width: 95%;
+ width: 90%;
  height: 100px;
  display: flex;
  flex-direction: column;
@@ -26,11 +26,57 @@
 
 }
 #forgot-butdiv{
- width: 95%;
+ width: 90%;
  height: 50px;
 }
 #forgotbut{
- width: 95%;
+ width: 90%;
+ border-radius: 6px;
+ height: 40px;
+ margin-left: 3px;
+ font-weight: bolder;
+ font-size: 16px;
+ color: white;
+ background: rgb(10, 10, 233);
+}
+#forgotbut:hover{
+ background: rgb(69, 69, 191);
+ cursor: pointer;
+}
+
+/* ----------------------------------resetpass.js------------------------------------ */
+#resetdiv{
+ background-color: white;
+ width: 100%;
+ height: 30px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+#resetCard{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 300px;
+ gap: 10px;
+}
+#resetField{
+ background-color: white;
+ width: 90%;
+ height: 200px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+#updatediv{
+ background-color: white;
+ width: 90%;
+ height: 40px;
+}
+#update{
+ width: 100%;
   border-radius: 6px;
   height: 40px;
   margin-left: 3px;
@@ -39,7 +85,7 @@
   color: white;
   background: rgb(10, 10, 233);
 }
-#forgotbut:hover{
+#update:hover{
  background: rgb(69, 69, 191);
  cursor: pointer;
 }
