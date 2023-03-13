@@ -62,6 +62,20 @@ function PopupForm(){
           />
           <TextField
            fullWidth
+           label="Password"
+           margin="normal"
+           size="small"
+           InputLabelProps={{type:{fontSize: 15}}}
+          />
+          <TextField
+           fullWidth
+           label="Confirm Password"
+           margin="normal"
+           size="small"
+           InputLabelProps={{type:{fontSize: 15}}}
+          />
+          <TextField
+           fullWidth
            label="Place"
            margin="normal"
            size="small"
