@@ -31,6 +31,7 @@ function PopupWindow(){
       <DialogTitle>Add New Window</DialogTitle>
       <div id="window-wraper">
        <DialogContent id="windowdial">
+        <div id="addwrap">
          <TextField
            fullWidth
            label="Start Date"
@@ -45,6 +46,8 @@ function PopupWindow(){
            size="small"
            InputLabelProps={{type:{fontSize: 15}}}
           />
+        </div>
+         
           <div id="addwind">
            <AddwindowTable/>
           </div>

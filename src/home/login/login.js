@@ -5,14 +5,17 @@ import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import Link from "@mui/material/Link";
 import { useMediaQuery } from 'react-responsive'
-
+import { useNavigate } from "react-router-dom";
 
 function Login(){
  //const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
   //const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
   const isPortrait = useMediaQuery({ query: '(max-width: 360px)' })
   //const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
-
+ const navigate=useNavigate();
+ function navigation(url){
+  navigate(url);
+ }
  
  return (
   <div id="main">
@@ -41,7 +44,7 @@ function Login(){
    </div>
     
     <div id="wrap">
-     <button variant="outlined" id="butlog">Login</button>    
+     <button variant="outlined" id="butlog" onClick={()=>navigation("/dashboard")}>Login</button>    
     </div>
      <h4 id="links">
      <Link href="/forgotpassword" style={{color:"blue"}}>Forgot Password?</Link>
