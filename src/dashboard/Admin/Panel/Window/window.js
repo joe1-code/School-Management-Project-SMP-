@@ -32,20 +32,7 @@ function PopupWindow(){
       <div id="window-wraper">
        <DialogContent id="windowdial">
         <div id="addwrap">
-         <TextField
-           fullWidth
-           label="Start Date"
-           margin="normal"
-           size="small"
-           InputLabelProps={{type:{fontSize: 15}}}
-          />
-          <TextField
-           fullWidth
-           label="Amount"
-           margin="normal"
-           size="small"
-           InputLabelProps={{type:{fontSize: 15}}}
-          />
+         
         </div>
          
           <div id="addwind">

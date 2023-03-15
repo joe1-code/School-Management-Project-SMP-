@@ -13,6 +13,7 @@ import Approve from "./dashboard/Admin/Panel/Accountant/approve";
 import Debt from "./dashboard/Admin/ManagePanel/paydebt";
 import Reset from "./home/forgotPassword/resetpass";
 import Newwindow from "./dashboard/Admin/Panel/Window/newwindow";
+import NewwindowTable from "./dashboard/tables/newwindowtable";
 
 
 function App(){
@@ -32,6 +33,7 @@ return (
       <Route path="/accountant" element={<AccountantPanel />}/>
       <Route path="/approve" element={<Approve/>}/>
       <Route path="/resetpassword" element={<Reset />}/>
+      <Route path="/virtuoso" element={<NewwindowTable/>}/>
     </Routes>
 
   </div>
