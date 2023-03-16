@@ -4,7 +4,6 @@ import TextField from '@mui/material/TextField';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
-import AddwindowTable from "../../../tables/addwindowTable";
 import Card from "@mui/material/Card";
 import './window.css';
 
@@ -35,9 +34,7 @@ function PopupWindow(){
          
         </div>
          
-          <div id="addwind">
-           <AddwindowTable/>
-          </div>
+          
           <DialogActions id="wind_butdiv">
            <button id="wind_but" onClick={()=>handleclose(true)}>Save</button>
           </DialogActions> 
