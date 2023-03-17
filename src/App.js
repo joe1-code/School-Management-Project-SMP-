@@ -14,14 +14,16 @@ import Debt from "./dashboard/Admin/ManagePanel/paydebt";
 import Reset from "./home/forgotPassword/resetpass";
 import Newwindow from "./dashboard/Admin/Panel/Window/newwindow";
 import NewwindowTable from "./dashboard/tables/newwindowtable";
-
+import Index from "./home/Index";
 
 function App(){
 return (
   <div>
     <Routes>
-      <Route path="/Home" element={<Login />}/>
-      <Route path="/forgotpassword" element={<Passcode />}/>
+      <Route path="/" element={<Index />}>
+        
+      </Route>
+      <Route path="/" element={<Passcode />}/>
       <Route path="/registerGroup" element={<RegisterGroup />}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/paydebt" element={<Debt/>}/>

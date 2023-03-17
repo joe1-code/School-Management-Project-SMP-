@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@mui/material/Card";
 import {useMediaQuery} from "react-responsive";
 import './regMember.css';
-import pic from '../../logo.jpg';
+import pic from '../../home/header/logo.jpg';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import DataTable from "../tables/table";
