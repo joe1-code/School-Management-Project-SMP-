@@ -66,7 +66,7 @@ function RegisterGroup(){
      />
      <TextField
       fullWidth
-      label="Confirm Password"
+      label="Place"
       margin="normal"
       size="small"
       InputLabelProps={{type:{fontSize: 15}}}

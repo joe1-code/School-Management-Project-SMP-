@@ -10,9 +10,6 @@ function Index(){
 return (
  <>
   <Header/>
-  <Route path="login" element={<Login/>}/>
-   <Route path="forgotpassword" element={<Passcode/>}/>
-   <Route path="resetpassword" element={<Reset/>}/>
   <Outlet/>
  </>
 

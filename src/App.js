@@ -21,7 +21,9 @@ return (
   <div>
     <Routes>
       <Route path="/" element={<Index />}>
-        
+        <Route path="login" element={<Login/>}/>
+        <Route path="forgotpassword" element={<Passcode/>}/>
+        <Route path="resetpassword" element={<Reset/>}/>
       </Route>
       <Route path="/" element={<Passcode />}/>
       <Route path="/registerGroup" element={<RegisterGroup />}/>
