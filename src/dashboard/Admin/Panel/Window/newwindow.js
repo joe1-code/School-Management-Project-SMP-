@@ -79,7 +79,7 @@ const handlechange=(event)=>{
    {Customization && <div id="cont3">
      <div id="receiveamount">
       <TextField
-       label="Amount"
+       label="Total"
        margin="normal"
        size="small"
        InputLabelProps={{type:{fontSize: 15}}}
