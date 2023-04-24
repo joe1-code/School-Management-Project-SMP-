@@ -65,26 +65,32 @@ if (!instance) {
         onAccessTokenFetched(AccessToken);
        }
       });
-
-      const retryOriginalRequest = new Promise((resolve) => {
-       addSubscriber((AccessToken) => {
-        const newToken = 'Bearer' + AccessToken;
-        const newheaders = {
-         ...originalRequest.headers,
-         Authorization: newToken
-        };
-
-        const newrequest = { ...originalRequest, headers: newheaders };
-        const newinstance = axios.create();
-        resolve(newinstance(newrequest));
-       });
-      });
-
-      return retryOriginalRequest;
      }
+
+     const retryOriginalRequest = new Promise((resolve) => {
+      addSubscriber((AccessToken) => {
+       const newToken = 'Bearer' + AccessToken;
+       const newheaders = {
+        ...originalRequest.headers,
+        Authorization: newToken
+       };
+
+       const newrequest = { ...originalRequest, headers: newheaders };
+       const newinstance = axios.create();
+       resolve(newinstance(newrequest));
+      });
+     });
+
+     return retryOriginalRequest;
+
     }
+
+
    }
+   return Promise.reject(error);
   }
 
  )
-}
+};
+
+export default instance;
