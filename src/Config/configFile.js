@@ -50,7 +50,7 @@ if (!instance) {
 
    let originalRequest = config;
 
-   if (originalRequest.url === '/link') {
+   if (originalRequest.url === '/resetpass') {
     return;
    }
    else {
