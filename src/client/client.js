@@ -67,3 +67,14 @@ export const login = async (payload) => {
 
  return false;
 };
+
+export const registerUser = async (payload) => {
+ try {
+  const regresponse = await instance.post("/register", { ...payload });
+ }
+ catch (error) {
+  console.log("error in registration", error);
+ }
+
+ return false;
+};
