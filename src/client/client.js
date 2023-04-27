@@ -78,3 +78,14 @@ export const registerUser = async (payload) => {
 
  return false;
 };
+
+export const registerGroup = async (payload) => {
+ try {
+  const regGroup = await instance.post("/registerGroup", { ...payload });
+ }
+ catch (error) {
+  console.log("error in register a group", error);
+ }
+
+ return false;
+};
