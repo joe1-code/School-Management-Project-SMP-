@@ -120,4 +120,15 @@ export const postCode = async (payload) => {
   console.log("error in reset password", error);
  }
 
-}
+};
+
+export const registerNewwindow = async (payload) => {
+ try {
+  const windowRes = await instance.post("/newwindow", { ...payload });
+ }
+ catch (error) {
+  console.log("error in registering new window", error);
+ }
+
+};
+
