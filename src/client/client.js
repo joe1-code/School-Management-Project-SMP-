@@ -89,3 +89,22 @@ export const registerGroup = async (payload) => {
 
  return false;
 };
+
+export const getCode = async (payload) => {
+ try {
+
+  const phone = payload.phoneNo;
+  //const {phoneNo} = payload;
+
+  const code = await instance.post("/forgotpass", { phone });
+
+ }
+ catch (error) {
+  console.log("error in getcode", error);
+  return {}
+ }
+};
+
+export const postCode = (payload) => {
+
+}
