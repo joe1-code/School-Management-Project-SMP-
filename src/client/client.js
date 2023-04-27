@@ -132,3 +132,28 @@ export const registerNewwindow = async (payload) => {
 
 };
 
+
+//-----------get api-------------------------------
+
+export const getUsers = async (data) => {
+ try {
+  if (data) {
+   const users = await instance.get("/getUsers", { params: data });
+   if (users) {
+    return users;
+   }
+   else {
+    const users = await instance.get("/getUsers");
+    if (users) {
+     return users;
+    }
+   }
+  }
+
+ }
+ catch (error) {
+  console.log("error in fetching users", error);
+ }
+};
+
+
