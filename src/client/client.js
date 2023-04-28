@@ -1,5 +1,9 @@
-import instance from "./Config/ConfigFile";
+import instance from "../Config/configFile";
 import { forEach } from "lodash";
+import * as jwt from 'jsonwebtoken';
+import isEmpty from "lodash/isEmpty";
+import crypto from 'crypto';
+
 
 let access_token;
 let TokenPayload;
@@ -11,7 +15,7 @@ let userId = localStorage.getItem("userId");
 export const getTokenPayload = (token) => {
  if (isEmpty(TokenPayload)) {
   try {
-   TokenPayload = jwt.Decode(token)
+   TokenPayload = jwt.decode(token)
   }
   catch (error) {
    console.log(error)
