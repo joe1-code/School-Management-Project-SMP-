@@ -1,6 +1,7 @@
 "use strict";
 
 import axios from 'axios';
+import { fetchAccessToken } from '../client/client';
 
 let instance;
 let BASE_URL;
@@ -57,6 +58,8 @@ if (!instance) {
     if (status === 405) {
      if (!isAlreadyFetchingAccessToken) {
       isAlreadyFetchingAccessToken = true;
+
+
 
       fetchAccessToken().then((access_token) => {
        if (access_token) {

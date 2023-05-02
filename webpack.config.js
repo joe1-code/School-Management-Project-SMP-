@@ -1,11 +1,8 @@
-import path from 'path';
-import crypto from 'crypto';
+// import nodeExternals from 'webpack-node-externals';
 
-export default {
- // ... other webpack configurations ...
- resolve: {
-  fallback: {
-   "crypto": require.resolve("crypto-browserify")
-  }
- }
-};
+// export default {
+//  // ...
+//  target: 'node', // or 'web' if you're building for the browser
+//  externals: [nodeExternals()],
+//  // ...
+// };
