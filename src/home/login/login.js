@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import './login.css';
 // import "../header/header";
 import TextField from '@mui/material/TextField';
@@ -7,6 +7,7 @@ import Link from "@mui/material/Link";
 import { useMediaQuery } from 'react-responsive'
 import { useNavigate } from "react-router-dom";
 import { login } from "../../client/client";
+import toast, { Toaster } from 'react-hot-toast';
 
 function Login() {
   //const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
@@ -14,14 +15,34 @@ function Login() {
   const isPortrait = useMediaQuery({ query: '(max-width: 360px)' })
   //const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
 
-  // function userLogin()
-  const fname = useRef('');
-  console.log(fname)
+  const { addToast } = toast();
+  const [Loading, setLoading] = useState('');
+  const [Checking, setChecking] = useState('');
 
-  const navigate = useNavigate();
-  function handleLogin(url) {
-    navigate(url);
+  const phoneNo = useRef('');
+  const password = useRef('')
+  const formref = useRef()
+
+  async function datahandle() {
+    console.log("ssssssss", phoneNo.current.value, password.current.value)
+    try {
+      setLoading(true);
+      if (!phoneNo.current.value == '' && password.current.value == '') {
+        const response = await login({
+          phoneNo: phoneNo.current.value,
+          password: password.current.value
+        })
+        console.log(phoneNo);
+        if (response) {
+
+        }
+      }
+    }
+    catch (error) {
+      toast("No inputs")
+    }
   }
+
 
   return (
     <div id="main">
@@ -34,7 +55,9 @@ function Login() {
             size="small"
             id="user"
             label="Username"
+            inputRef={phoneNo}
             margin="normal"
+            ref={formref}
 
           />
           <TextField
@@ -42,15 +65,17 @@ function Login() {
             size="small"
             id="pass"
             label="Password"
+            inputRef={password}
             type="password"
             variant="outlined"
             margin="normal"
+            ref={formref}
             fullWidth
           />
         </div>
 
         <div id="wrap">
-          <button variant="outlined" id="butlog" onClick={() => handleLogin()}>Login</button>
+          <button variant="outlined" id="butlog" onClick={() => datahandle()} >Login</button>
         </div>
         <h4 id="links">
           <Link href="/forgotpassword" style={{ color: "blue" }}>Forgot Password?</Link>
@@ -63,9 +88,11 @@ function Login() {
       </Card>}
 
     </div>
-
-
   )
+
+
+
+
 }
 
 export default Login;
