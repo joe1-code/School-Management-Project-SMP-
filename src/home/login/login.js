@@ -24,21 +24,25 @@ function Login() {
   const formref = useRef()
 
   async function datahandle() {
-    console.log("ssssssss", phoneNo.current.value, password.current.value)
+
     try {
+
       setLoading(true);
-      if (!phoneNo.current.value == '' && password.current.value == '') {
+      if (!phoneNo.current.value == '' && !password.current.value == '') {
+
         const response = await login({
           phoneNo: phoneNo.current.value,
           password: password.current.value
         })
-        console.log(phoneNo);
+        console.log("numberrrrrrrr");
         if (response) {
+          console.log("ssssssss")
           setLoading(false);
           toast('Welcome!', {
             appearance: 'success',
             autoDismiss: true
           });
+
           window.location.replace('/dashboard');
           return ('logged In');
 
@@ -51,6 +55,7 @@ function Login() {
 
       }
       else {
+        console.log("ssssssssqqqqqqqqqqqq")
         toast('Fill all the fields correctly!', {
           appearance: 'error'
         })
@@ -115,6 +120,7 @@ function Login() {
 
         <div id="wrap">
           <button variant="outlined" id="butlog" onClick={() => datahandle()} >Login</button>
+          <Toaster />
         </div>
         <h4 id="links">
           <Link href="/forgotpassword" style={{ color: "blue" }}>Forgot Password?</Link>
