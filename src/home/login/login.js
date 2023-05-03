@@ -17,7 +17,7 @@ function Login() {
 
   const { addToast } = toast();
   const [Loading, setLoading] = useState('');
-  const [Checking, setChecking] = useState('');
+  const [Checked, setChecked] = useState('');
 
   const phoneNo = useRef('');
   const password = useRef('')
@@ -34,13 +34,50 @@ function Login() {
         })
         console.log(phoneNo);
         if (response) {
+          setLoading(false);
+          toast('Welcome!', {
+            appearance: 'success',
+            autoDismiss: true
+          });
+          window.location.replace('/dashboard');
+          return ('logged In');
 
         }
+        else {
+          setLoading(false);
+          toast('Wrong credentials, try again please!', { appearance: 'error' });
+
+        }
+
       }
+      else {
+        toast('Fill all the fields correctly!', {
+          appearance: 'error'
+        })
+
+      }
+
+
+
+
     }
+
     catch (error) {
-      toast("No inputs")
+      setLoading(false);
+      toast('Failed', {
+        appearance: 'error'
+      })
     }
+
+  }
+  function HandleKeyDown(event) {
+    if (event.key === 'Enter') {
+      datahandle();
+    }
+  }
+
+  function handleCheck() {
+    setChecked(!Checked)
   }
 
 
@@ -58,6 +95,7 @@ function Login() {
             inputRef={phoneNo}
             margin="normal"
             ref={formref}
+            onKeyDown={HandleKeyDown}
 
           />
           <TextField
@@ -70,6 +108,7 @@ function Login() {
             variant="outlined"
             margin="normal"
             ref={formref}
+            onKeyDown={HandleKeyDown}
             fullWidth
           />
         </div>
