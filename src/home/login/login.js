@@ -7,7 +7,9 @@ import Link from "@mui/material/Link";
 import { useMediaQuery } from 'react-responsive'
 import { useNavigate } from "react-router-dom";
 import { login } from "../../client/client";
-import toast, { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Login() {
   //const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
@@ -120,7 +122,7 @@ function Login() {
 
         <div id="wrap">
           <button variant="outlined" id="butlog" onClick={() => datahandle()} >Login</button>
-          <Toaster />
+          <ToastContainer />
         </div>
         <h4 id="links">
           <Link href="/forgotpassword" style={{ color: "blue" }}>Forgot Password?</Link>

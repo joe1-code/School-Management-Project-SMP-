@@ -1,4 +1,4 @@
-import instance from "../Config/configFile";
+import instance from "../Config/axiosconfig";
 import { merge, forEach } from "lodash";
 import isEmpty from "lodash/isEmpty";
 import jwtDecode from "jwt-decode";
