@@ -17,7 +17,7 @@ function Login() {
   const isPortrait = useMediaQuery({ query: '(max-width: 360px)' })
   //const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
 
-  const { addToast } = toast();
+  // const { addToast } = toast();
   const [Loading, setLoading] = useState('');
   const [Checked, setChecked] = useState('');
 

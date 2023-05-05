@@ -67,6 +67,7 @@ export const login = async (payload) => {
   const accessToken = authRes.token
   // const { token:accessToken } = authRes;
   if (accessToken) {
+   console.log(accessToken)
    const payload = getTokenPayload(accessToken);
    const { id } = payload;
    localStorage.setItem('token', accessToken);
