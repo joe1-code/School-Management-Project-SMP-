@@ -36,9 +36,7 @@ function Login() {
           phoneNo: phoneNo.current.value,
           password: password.current.value
         })
-        console.log("numberrrrrrrr");
         if (response) {
-          console.log("ssssssss")
           setLoading(false);
           toast('Welcome!', {
             appearance: 'success',

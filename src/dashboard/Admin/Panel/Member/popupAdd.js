@@ -8,7 +8,7 @@ import Select from "react-select";
 import DialogActions from "@mui/material/DialogActions";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { convertLength } from "@mui/material/styles/cssUtils";
+import { registerUser } from "../../../../client/client";
 
 function PopupForm() {
   const [selectedOption, setSelectedOPtion] = useState('');
@@ -42,19 +42,10 @@ function PopupForm() {
   const handleSubmit = () => {
     // event.preventDefault();
     console.log(selectedOption.value);
-    console.log("tesssssssssst")
+
   }
 
-  function MemberOpt() {
-    return (
-      <Select
-        options={options}
-        value={selectedOption}
-        onChange={handleSelectedOption}
 
-      />
-    );
-  }
 
 
   const handleopen = () => {
@@ -65,14 +56,15 @@ function PopupForm() {
     setOpen(false);
   }
 
-
-
-
-  const test = title.current.value;
-  const names = fullname.current.value;
-  console.log("ddddddddddd", test, names)
-
   async function handle() {
+    console.log(
+      fullname.current.value,
+      phoneNo.current.value,
+      email.current.value,
+      password.current.value,
+      place.current.value,
+      selectedOption.value
+    )
     try {
       setLoading(true);
       if (
@@ -83,16 +75,17 @@ function PopupForm() {
         !place.current.value == '' &&
         !title.current.value == ''
       ) {
-        const response = await PopupForm({
-          fullname: fullname.current.value,
-          phoneNo: phoneNo.current.value,
-          email: email.current.value,
-          password: password.current.value,
-          place: place.current.value,
-          title: title.current.value
-        });
+        console.log("ffffffffff")
+        // const response = await registerUser({
+        //   fullname: fullname.current.value,
+        //   phoneNo: phoneNo.current.value,
+        //   email: email.current.value,
+        //   password: password.current.value,
+        //   place: place.current.value,
+        //   title: title.current.value
+        // });
 
-        if (response) {
+        if (1) {
           // formref.current.reset() to do clear form;
           setLoading(false);
           toast('user registered!', {
@@ -195,10 +188,15 @@ function PopupForm() {
               InputLabelProps={{ type: { fontSize: 15 } }}
             />
             <div id="memberOpt">
-              <MemberOpt />
+              <Select
+                options={options}
+                value={selectedOption}
+                onChange={handleSelectedOption}
+              />
             </div>
             <DialogActions id="reg_butdiv">
-              <button id="reg_but" onClick={() => handleSubmit()}>Register</button>
+              <button id="reg_but" onClick={() => handle()}>Register</button>
+              <ToastContainer />
             </DialogActions>
           </DialogContent>
 
