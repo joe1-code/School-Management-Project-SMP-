@@ -84,7 +84,7 @@ export const login = async (payload) => {
 
 export const registerUser = async (payload) => {
  try {
-  const regresponse = await instance.post("/register", { ...payload });
+  const regresponse = await instance.post("/registerUser", { ...payload });
  }
  catch (error) {
   console.log("error in registration", error);

@@ -115,7 +115,7 @@ BASE_URL = process.env.REACT_APP_VICOBA_API_URL;
 
 const defaultOptions = {
  baseURL: BASE_URL,
- withCredentials: true,
+ // withCredentials: true,
  headers: {
   'Content-Type': 'application/json',
  },

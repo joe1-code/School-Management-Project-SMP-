@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useRef, useState } from "react";
 import Dialog from "@mui/material/Dialog";
 import TextField from '@mui/material/TextField';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -6,93 +6,206 @@ import RegisterMember from './registerMember';
 import DialogContent from "@mui/material/DialogContent";
 import Select from "react-select";
 import DialogActions from "@mui/material/DialogActions";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { convertLength } from "@mui/material/styles/cssUtils";
 
-function PopupForm(){
- const options = [
-  {value:'M/Kiti',label:'M/Kiti'},
-  {value:'Katibu',label:'Katibu'},
-  {value:'Mhasibu',label:'Mhasibu'},
-  {value:'Mwanachama',label:'Mwanachama'}
+function PopupForm() {
+  const [selectedOption, setSelectedOPtion] = useState('');
+  const [Loading, setLoading] = useState('');
+  const [Checked, setChecked] = useState('');
+  const [Open, setOpen] = useState(false);
 
-]
- function MemberOpt(){
+
+  // receive data from the form interface
+
+  const fullname = useRef('');
+  const phoneNo = useRef('');
+  const email = useRef('');
+  const password = useRef('');
+  const place = useRef('');
+  const title = useRef('');
+  const formref = useRef('');
+
+
+  const options = [
+    { value: 'M/Kiti', label: 'M/Kiti' },
+    { value: 'Katibu', label: 'Katibu' },
+    { value: 'Mhasibu', label: 'Mhasibu' },
+    { value: 'Mwanachama', label: 'Mwanachama' }
+
+  ]
+  const handleSelectedOption = (selected) => {
+    setSelectedOPtion(selected);
+  }
+
+  const handleSubmit = () => {
+    // event.preventDefault();
+    console.log(selectedOption.value);
+    console.log("tesssssssssst")
+  }
+
+  function MemberOpt() {
+    return (
+      <Select
+        options={options}
+        value={selectedOption}
+        onChange={handleSelectedOption}
+
+      />
+    );
+  }
+
+
+  const handleopen = () => {
+    setOpen(true);
+  }
+
+  const handleclose = () => {
+    setOpen(false);
+  }
+
+
+
+
+  const test = title.current.value;
+  const names = fullname.current.value;
+  console.log("ddddddddddd", test, names)
+
+  async function handle() {
+    try {
+      setLoading(true);
+      if (
+        !fullname.current.value == '' &&
+        !phoneNo.current.value == '' &&
+        !email.current.value == '' &&
+        !password.current.value == '' &&
+        !place.current.value == '' &&
+        !title.current.value == ''
+      ) {
+        const response = await PopupForm({
+          fullname: fullname.current.value,
+          phoneNo: phoneNo.current.value,
+          email: email.current.value,
+          password: password.current.value,
+          place: place.current.value,
+          title: title.current.value
+        });
+
+        if (response) {
+          // formref.current.reset() to do clear form;
+          setLoading(false);
+          toast('user registered!', {
+            appearance: 'success',
+            autoDismiss: true
+          });
+          window.location.replace(`/panel`);
+          return 'logged';
+        }
+        setLoading(false);
+        toast('Did not register!', {
+          appearance: 'error'
+        });
+      } else {
+        toast('Fill all the fileds!', { appearance: 'error' });
+        setLoading(false);
+        return;
+      }
+    } catch (error) {
+      setLoading(false);
+      toast('Failed', { appearance: 'error' });
+    }
+  }
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handle();
+    }
+  };
+  function handlecheck() {
+    setChecked(!Checked);
+  }
+
+
   return (
-   <Select options={options} />
-  );
- }
+    <div>
+      <button variant="outlined" id="add-but" onClick={handleopen}>
+        Add Member
+      </button>
+      <Dialog id="dialog" open={Open} onClose={handleclose} >
+        <DialogTitle>Register A Member</DialogTitle>
+        <div id="wraps">
+          <DialogContent id="dial">
+            <TextField
+              fullWidth
+              label="Full Name"
+              margin="normal"
+              size="small"
+              inputRef={fullname}
+              ref={formref}
+              onKeyDown={handleKeyDown}
+              InputLabelProps={{ type: { fontSize: 15 } }}
+            />
+            <TextField
+              fullWidth
+              label="Phone No."
+              margin="normal"
+              size="small"
+              inputRef={phoneNo}
+              ref={formref}
+              onKeyDown={handleKeyDown}
+              InputLabelProps={{ type: { fontSize: 15 } }}
+            />
+            <TextField
+              fullWidth
+              label="email"
+              margin="normal"
+              size="small"
+              inputRef={email}
+              ref={formref}
+              onKeyDown={handleKeyDown}
+              InputLabelProps={{ type: { fontSize: 15 } }}
+            />
+            <TextField
+              fullWidth
+              label="Password"
+              type="password"
+              margin="normal"
+              size="small"
+              inputRef={password}
+              ref={formref}
+              onKeyDown={handleKeyDown}
+              InputLabelProps={{ type: { fontSize: 15 } }}
+            />
+            <TextField
+              fullWidth
+              label="Confirm Password"
+              type="password"
+              margin="normal"
+              size="small"
+              InputLabelProps={{ type: { fontSize: 15 } }}
+            />
+            <TextField
+              fullWidth
+              label="Place"
+              margin="normal"
+              size="small"
+              inputRef={place}
+              ref={formref}
+              onKeyDown={handleKeyDown}
+              InputLabelProps={{ type: { fontSize: 15 } }}
+            />
+            <div id="memberOpt">
+              <MemberOpt />
+            </div>
+            <DialogActions id="reg_butdiv">
+              <button id="reg_but" onClick={() => handleSubmit()}>Register</button>
+            </DialogActions>
+          </DialogContent>
 
- const [Open, setOpen]= useState(false);
- 
- const handleopen=()=>{
-  setOpen(true);
- }
- 
- const handleclose=()=>{
-  setOpen(false);
- }
- return (
-  <div>
-    <button variant="outlined" id="add-but" onClick={handleopen}>
-     Add Member
-    </button>
-    <Dialog id="dialog" open={Open} onClose={handleclose}>
-      <DialogTitle>Register A Member</DialogTitle>
-      <div id="wraps">
-       <DialogContent id="dial">
-         <TextField
-           fullWidth
-           label="Full Name"
-           margin="normal"
-           size="small"
-           InputLabelProps={{type:{fontSize: 15}}}
-          />
-          <TextField
-           fullWidth
-           label="Phone No."
-           margin="normal"
-           size="small"
-           InputLabelProps={{type:{fontSize: 15}}}
-          />
-          <TextField
-           fullWidth
-           label="Email"
-           margin="normal"
-           size="small"
-           InputLabelProps={{type:{fontSize: 15}}}
-          />
-          <TextField
-           fullWidth
-           label="Password"
-           margin="normal"
-           size="small"
-           InputLabelProps={{type:{fontSize: 15}}}
-          />
-          <TextField
-           fullWidth
-           label="Confirm Password"
-           margin="normal"
-           size="small"
-           InputLabelProps={{type:{fontSize: 15}}}
-          />
-          <TextField
-           fullWidth
-           label="Place"
-           margin="normal"
-           size="small"
-           InputLabelProps={{type:{fontSize: 15}}}
-          />
-          <div id="memberOpt">
-            <MemberOpt/>
-          </div>
-          <DialogActions id="reg_butdiv">
-           <button id="reg_but" onClick={()=>handleclose(true)}>Register</button>
-          </DialogActions> 
-        </DialogContent>
-        
-      </div>
-    </Dialog>
-  </div>
-  
- )
+        </div>
+      </Dialog>
+    </div>
+
+  )
 }
 export default PopupForm;
