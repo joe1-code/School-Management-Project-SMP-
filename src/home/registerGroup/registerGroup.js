@@ -34,7 +34,6 @@ function RegisterGroup() {
     setSelectedOPtion(select);
   }
 
-  console.log("tessssssssssssst", place.current.value)
 
   async function HandleRegGroup() {
 
@@ -63,13 +62,14 @@ function RegisterGroup() {
           place: place.current.value,
           title: selectedOption.value
         });
+        console.log("wwwwwwwwww", response)
         if (response) {
           setLoading(false)
           toast('Group registered!', {
             appearance: 'success',
             autoDismiss: true
           });
-          window.location.replace('/login')
+          window.location.replace('/login');
           return 'group registered';
         }
         setLoading(false)
