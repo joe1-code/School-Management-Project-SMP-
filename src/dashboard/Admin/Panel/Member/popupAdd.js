@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import Dialog from "@mui/material/Dialog";
 import TextField from '@mui/material/TextField';
 import DialogTitle from '@mui/material/DialogTitle';
-import RegisterMember from './registerMember';
 import DialogContent from "@mui/material/DialogContent";
 import Select from "react-select";
 import DialogActions from "@mui/material/DialogActions";
@@ -57,7 +56,6 @@ function PopupForm() {
   }
 
   async function handle() {
-    console.log("ffffffffff")
     try {
       setLoading(true);
       if (
@@ -68,7 +66,6 @@ function PopupForm() {
         !place.current.value == '' &&
         !selectedOption.value == ''
       ) {
-        console.log("ffffffffff")
         const response = await registerUser({
           fullname: fullname.current.value,
           phoneNo: phoneNo.current.value,
