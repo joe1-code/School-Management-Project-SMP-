@@ -57,14 +57,7 @@ function PopupForm() {
   }
 
   async function handle() {
-    console.log(
-      fullname.current.value,
-      phoneNo.current.value,
-      email.current.value,
-      password.current.value,
-      place.current.value,
-      selectedOption.value
-    )
+    console.log("ffffffffff")
     try {
       setLoading(true);
       if (
@@ -73,19 +66,19 @@ function PopupForm() {
         !email.current.value == '' &&
         !password.current.value == '' &&
         !place.current.value == '' &&
-        !title.current.value == ''
+        !selectedOption.value == ''
       ) {
         console.log("ffffffffff")
-        // const response = await registerUser({
-        //   fullname: fullname.current.value,
-        //   phoneNo: phoneNo.current.value,
-        //   email: email.current.value,
-        //   password: password.current.value,
-        //   place: place.current.value,
-        //   title: title.current.value
-        // });
+        const response = await registerUser({
+          fullname: fullname.current.value,
+          phoneNo: phoneNo.current.value,
+          email: email.current.value,
+          password: password.current.value,
+          place: place.current.value,
+          title: selectedOption.value
+        });
 
-        if (1) {
+        if (response) {
           // formref.current.reset() to do clear form;
           setLoading(false);
           toast('user registered!', {
