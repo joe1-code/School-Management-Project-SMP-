@@ -18,7 +18,8 @@ function PopupForm() {
 
   // receive data from the form interface
 
-  const fullname = useRef('');
+  const firstname = useRef('');
+  const lastname = useRef('')
   const phoneNo = useRef('');
   const email = useRef('');
   const password = useRef('');
@@ -59,7 +60,8 @@ function PopupForm() {
     try {
       setLoading(true);
       if (
-        !fullname.current.value == '' &&
+        !firstname.current.value == '' &&
+        !lastname.current.value == '' &&
         !phoneNo.current.value == '' &&
         !email.current.value == '' &&
         !password.current.value == '' &&
@@ -67,7 +69,8 @@ function PopupForm() {
         !selectedOption.value == ''
       ) {
         const response = await registerUser({
-          fullname: fullname.current.value,
+          firstname: firstname.current.value,
+          lastname: lastname.current.value,
           phoneNo: phoneNo.current.value,
           email: email.current.value,
           password: password.current.value,
@@ -120,10 +123,20 @@ function PopupForm() {
           <DialogContent id="dial">
             <TextField
               fullWidth
-              label="Full Name"
+              label="First Name"
               margin="normal"
               size="small"
-              inputRef={fullname}
+              inputRef={firstname}
+              ref={formref}
+              onKeyDown={handleKeyDown}
+              InputLabelProps={{ type: { fontSize: 15 } }}
+            />
+            <TextField
+              fullWidth
+              label="Last Name"
+              margin="normal"
+              size="small"
+              inputRef={lastname}
               ref={formref}
               onKeyDown={handleKeyDown}
               InputLabelProps={{ type: { fontSize: 15 } }}

@@ -84,7 +84,8 @@ export const login = async (payload) => {
 
 export const registerUser = async (payload) => {
  try {
-  const regresponse = await instance.post("/registerUser", { ...payload });
+  const regresponse = await instance.post("/members", { ...payload });
+  return true;
  }
  catch (error) {
   console.log("error in registration", error);
@@ -110,16 +111,17 @@ export const registerGroup = async (payload) => {
 export const getCode = async (payload) => {
  try {
 
-  const phone = payload.phoneNo;
+  const phoneNo = payload.phoneNo;
   //const {phoneNo} = payload;
 
-  const code = await instance.post("/forgotpass", { phone });
+  const code = await instance.post("/forgotpassword", { phoneNo });
   return code;
  }
  catch (error) {
   console.log("error in getcode", error);
   return {}
  }
+
 };
 
 
