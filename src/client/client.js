@@ -118,8 +118,7 @@ export const getCode = async (payload) => {
   return code;
  }
  catch (error) {
-  console.log("error in getcode", error);
-  return {}
+  return {};
  }
 
 };

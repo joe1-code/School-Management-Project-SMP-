@@ -28,14 +28,14 @@ function Passcode() {
         !phoneNo.current.value == ''
       ) {
 
-        const response = await getCode({
+        const code = await getCode({
           phoneNo: phoneNo.current.value
         });
 
-        if (response) {
-          console.log("xxxxxxxxx", response)
+        if (code.isSuccessful) {
+          console.log("ddddd", code)
           setLoading(false)
-          toast("", {
+          toast("The code was sent", {
             appearance: 'success',
             autoDismiss: true
           });
