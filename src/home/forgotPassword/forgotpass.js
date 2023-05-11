@@ -33,14 +33,13 @@ function Passcode() {
         });
 
         if (code.isSuccessful) {
-          console.log("ddddd", code)
           setLoading(false)
           toast("The code was sent", {
             appearance: 'success',
             autoDismiss: true
           });
 
-          // window.location.replace('/resetpassword');
+          window.location.replace('/resetpassword');
           return 'success';
         }
         setLoading(false)
