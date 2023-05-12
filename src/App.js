@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { store } from './store';
 import Login from "./home/login/login";
 import Passcode from "./home/forgotPassword/forgotpass";
 import Dashboard from "./dashboard/Admin/dashboard";
@@ -25,7 +27,10 @@ function App() {
           <Route path="forgotpassword" element={<Passcode />} />
           <Route path="resetpassword" element={<Reset />} />
         </Route>
-        <Route path="/" element={<Passcode />} />
+        <Provider store={store}>
+          <Passcode />
+        </Provider>
+        {/* <Route path="/" element={<Passcode />} /> */}
         <Route path="/registerGroup" element={<RegisterGroup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/paydebt" element={<Debt />} />
