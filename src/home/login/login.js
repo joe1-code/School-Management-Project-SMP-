@@ -5,11 +5,10 @@ import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import Link from "@mui/material/Link";
 import { useMediaQuery } from 'react-responsive'
-import { useNavigate } from "react-router-dom";
 import { login } from "../../client/client";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   //const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
@@ -20,6 +19,7 @@ function Login() {
   // const { addToast } = toast();
   const [Loading, setLoading] = useState('');
   const [Checked, setChecked] = useState('');
+  const navigate = useNavigate();
 
   const phoneNo = useRef('');
   const password = useRef('')
@@ -43,7 +43,7 @@ function Login() {
             autoDismiss: true
           });
 
-          window.location.replace('/dashboard');
+          navigate('/dashboard');
           return ('logged In');
 
         }

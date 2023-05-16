@@ -150,7 +150,7 @@ if (!instance) {
    } = error;
    let originalRequest = config;
 
-   if (originalRequest.url === '/resetpass') {
+   if (originalRequest.url === '/resetpassword') {
     return;
    } else {
     if (status === 405) {

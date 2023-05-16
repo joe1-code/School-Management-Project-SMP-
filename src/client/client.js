@@ -126,14 +126,16 @@ export const getCode = async (payload) => {
 
 export const postCode = async (payload) => {
  try {
-  const { phoneNo, code, password } = payload;
+  const { phoneNo, userCode, password } = payload;
 
-  const isReset = await instance.post("/resetpass", { phoneNo, code, password });
+  const isReset = await instance.post("/resetpassword", { phoneNo, userCode, password });
 
-  if (isReset) {
-   return { isReset: true }
-  }
-  return { isReset: false }
+  return;
+
+  //  if (isReset) {
+  //   return { isReset: true }
+  //  }
+  //  return { isReset: false }
  }
  catch (error) {
   console.log("error in reset password", error);
