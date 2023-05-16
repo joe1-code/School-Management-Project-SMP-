@@ -57,7 +57,7 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^6.8.1",
+    "react-router-dom": "^6.11.1",
     "webpack-node-externals": "^3.0.0"
   },
   "browser": {

@@ -6,20 +6,19 @@ import { useNavigate } from "react-router-dom";
 import { getCode } from "../../client/client";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { PHONENO_POST_CODE } from '../../actions';
-import { connect } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { reducerf } from "../../store";
+import { useSelector } from "react-redux";
 
 
-function Passcode({ dispatch }) {
-  const navigation = useNavigate();
-  function navigate(url) {
-    navigation(url)
-  }
-
+function Passcode() {
   const [Loading, setLoading] = useState('');
-
+  const dispatch = useDispatch();
   const phoneNo = useRef('');
   const formref = useRef('');
+  const navigate = useNavigate();
+
+
 
   async function forgotPass() {
 
@@ -40,8 +39,8 @@ function Passcode({ dispatch }) {
             appearance: 'success',
             autoDismiss: true
           });
-          dispatch({ type: PHONENO_POST_CODE, payload: phoneNo });
-          window.location.replace('/resetpassword');
+          dispatch(reducerf({ phoneNo: phoneNo.current.value }));
+          navigate('/resetpassword');
           return 'success';
         }
         setLoading(false)
@@ -98,7 +97,5 @@ function Passcode({ dispatch }) {
   )
 }
 
-const MapStateToprops = (store) => {
-  return { ...store };
-};
-export default connect(MapStateToprops)(Passcode);
+
+export default Passcode;

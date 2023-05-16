@@ -1,20 +1,51 @@
 import React, { useRef, useState } from "react";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
-import { PHONENO_POST_CODE, PHONENO_POST_CODE_CLEAR } from '../../actions'
-import { connect } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function Reset({ dispatch, phoneNo }) {
+function Reset() {
   const [Loading, setLoading] = useState('');
 
+  const { phoneNo } = useSelector((state) => state.store.initialStore);
+
   console.log(phoneNo)
-
   const userCode = useRef('');
+  const password = useRef('');
+  const confirmpass = useRef('');
 
-  dispatch({ type: PHONENO_POST_CODE_CLEAR });
+  async function resetpassword() {
+    setLoading(true)
+
+    try {
+      if (
+        !userCode.current.value == '' &&
+        !password.current.value == ''
+
+      ) {
+        const response = await postCode({
+          userCode: userCode.current.value,
+          password: password.current.value
+        })
+      }
+    }
+    catch (error) {
+      //lll
+    }
+  }
+
+
+
+
+
+
+
 
 
   return (
+
     <>
       <div id="resetdiv" style={{ color: "#7B7575" }}><h3>Reset your password</h3></div>
       <Card id="resetCard">
@@ -47,16 +78,18 @@ function Reset({ dispatch, phoneNo }) {
           />
         </div>
 
-        <div id="updatediv"><button id="update">Update</button></div>
+        <div id="updatediv"><button id="update" onClick={() => Reset()}>Update</button>
+          <ToastContainer />
+        </div>
+
       </Card>
+
     </>
   )
 }
 
-const MapStateToprops = (store) => {
-  return { ...store };
-};
-export default connect(MapStateToprops)(Reset);
+
+export default Reset;
 
 
 
