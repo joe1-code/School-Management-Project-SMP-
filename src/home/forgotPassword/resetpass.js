@@ -27,27 +27,27 @@ function Reset() {
         !userCode.current.value == '' &&
         !password.current.value == ''
       ) {
-        const response = await postCode({
+        const isReset = await postCode({
           userCode: userCode.current.value,
           password: password.current.value,
           phoneNo: phoneNo
         });
 
-        if (response) {
+        if (isReset.isSuccessful) {
           setLoading(false)
           toast("your password has been updated successfully!", {
             appearance: 'success',
             autoDismiss: true
           });
-          navigate("../login/login")
-          return 'succcess'
+          navigate('/login')
+          return 'succcess';
 
 
         }
         setLoading(false)
         toast("password has not been updated", {
           appearance: 'error'
-        })
+        });
       }
       else {
         setLoading(false)

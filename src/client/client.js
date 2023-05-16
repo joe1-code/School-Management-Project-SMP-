@@ -130,7 +130,7 @@ export const postCode = async (payload) => {
 
   const isReset = await instance.post("/resetpassword", { phoneNo, userCode, password });
 
-  return;
+  return isReset;
 
   //  if (isReset) {
   //   return { isReset: true }

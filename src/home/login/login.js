@@ -55,7 +55,7 @@ function Login() {
 
       }
       else {
-        console.log("ssssssssqqqqqqqqqqqq")
+
         toast('Fill all the fields correctly!', {
           appearance: 'error'
         })
