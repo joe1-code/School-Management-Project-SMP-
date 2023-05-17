@@ -1,49 +1,31 @@
-import {useState} from "react";
-import Dialog from "@mui/material/Dialog";
-import TextField from '@mui/material/TextField';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
 import './window.css';
 
-function PopupWindow(){
+function PopupWindow() {
 
- const [Open, setOpen]= useState(false);
- 
- const handleopen=()=>{
-  setOpen(true);
- }
- 
- const handleclose=()=>{
-  setOpen(false);
- }
- return (
-  <div id="contain">
-   <div id="div-but">
-    <button variant="outlined" id="window-but" onClick={handleopen}>
-     Add Window
-    </button>
-   </div>
-    
-    <Dialog id="dialogs" open={Open} onClose={handleclose}>
-      <DialogTitle>Add New Window</DialogTitle>
-      <div id="window-wraper">
-       <DialogContent id="windowdial">
-        <div id="addwrap">
-         
-        </div>
-         
-          
-          <DialogActions id="wind_butdiv">
-           <button id="wind_but" onClick={()=>handleclose(true)}>Save</button>
-          </DialogActions> 
-        </DialogContent>
-        
+  const [Open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleopen = () => {
+    setOpen(true);
+  }
+
+  const handleclose = () => {
+    setOpen(false);
+  }
+  return (
+    <div id="contain">
+      <div id="div-but">
+        <button variant="outlined" id="window-but" onClick={() => { navigate("/regwindow") }}>
+          Add Window
+        </button>
       </div>
-    </Dialog>
-  </div>
-  
- )
+
+
+    </div>
+
+  )
 }
 export default PopupWindow;

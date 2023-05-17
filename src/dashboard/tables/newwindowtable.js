@@ -8,8 +8,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { TableVirtuoso } from 'react-virtuoso';
 import Checkboxes from '../Admin/Panel/Window/checkbox';
+import { getUsers } from '../../client/client';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
-const checks=(<Checkboxes/>);
+
+
+const checks = (<Checkboxes />);
+
 
 const sample = [
   ['Joel John', checks],
@@ -21,20 +27,20 @@ const sample = [
   ['Koku Banza', checks],
   ['Figo Luis', checks],
   ['Ally Mjahidin', checks]
- 
+
 ];
 
 
 function createData(id, names, participate) {
-  return { id, names, participate};
+  return { id, names, participate };
 }
 
 const columns = [
   {
-   width:10,
-   label:'S/N',
-   dataKey:'id',
-   numeric:true
+    width: 10,
+    label: 'S/N',
+    dataKey: 'id',
+    numeric: true
   },
   {
     width: 10,
@@ -69,7 +75,7 @@ function fixedHeaderContent() {
   return (
     <TableRow>
       {columns.map((column) => (
-       
+
         <TableCell
           key={column.dataKey}
           variant="head"
@@ -87,7 +93,7 @@ function fixedHeaderContent() {
 }
 
 function rowContent(_index, row) {
- 
+
   return (
     <React.Fragment>
       {columns.map((column) => (
@@ -102,8 +108,24 @@ function rowContent(_index, row) {
   );
 }
 
- function NewwindowTable() {
-  
+function NewwindowTable() {
+
+  useEffect(() => {
+    fetchdata();
+  }, [])
+
+  async function fetchdata() {
+    const response = await getUsers();
+    if (response) {
+      console.log(response);
+    }
+    else {
+      console.log("no data")
+    }
+
+  }
+
+
   return (
     <Paper style={{ height: 450, width: '330px' }}>
       <TableVirtuoso

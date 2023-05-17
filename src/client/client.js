@@ -158,19 +158,11 @@ export const registerNewwindow = async (payload) => {
 
 //-----------get api endpoints-------------------------------
 
-export const getUsers = async (data) => {
+export const getUsers = async () => {
  try {
-  if (data) {
-   const users = await instance.get("/getUsers", { params: data });
-   if (users) {
-    return users;
-   }
-   else {
-    const users = await instance.get("/getUsers");
-    if (users) {
-     return users;
-    }
-   }
+  const users = await instance.get("/getUsers");
+  if (users) {
+   return users;
   }
 
  }

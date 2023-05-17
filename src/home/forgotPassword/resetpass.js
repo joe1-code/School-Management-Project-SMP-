@@ -35,7 +35,7 @@ function Reset() {
 
         if (isReset.isSuccessful) {
           setLoading(false)
-          toast("your password has been updated successfully!", {
+          toast({
             appearance: 'success',
             autoDismiss: true
           });
