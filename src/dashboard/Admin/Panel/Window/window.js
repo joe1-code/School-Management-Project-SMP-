@@ -18,7 +18,7 @@ function PopupWindow() {
   return (
     <div id="contain">
       <div id="div-but">
-        <button variant="outlined" id="window-but" onClick={() => { navigate("/regwindow") }}>
+        <button variant="outlined" id="window-but" onClick={() => { window.location.replace("/regwindow") }}>
           Add Window
         </button>
       </div>

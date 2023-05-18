@@ -109,6 +109,7 @@ function rowContent(_index, row) {
 }
 
 function NewwindowTable() {
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     fetchdata();
@@ -117,7 +118,21 @@ function NewwindowTable() {
   async function fetchdata() {
     const response = await getUsers();
     if (response) {
-      console.log(response);
+      console.log(response.data);
+
+      // const sample = [
+      //   ['Joel John', checks],
+      //   ['Hamis Hakim', checks],
+      //   ['Abdul Ndugu', checks],
+      //   ['Jumbe Anna', checks],
+      //   ['Paul Chula', checks],
+      //   ['Khalid Amed', checks],
+      //   ['Koku Banza', checks],
+      //   ['Figo Luis', checks],
+      //   ['Ally Mjahidin', checks]
+
+      // ];
+      setUsers(sample)
     }
     else {
       console.log("no data")
