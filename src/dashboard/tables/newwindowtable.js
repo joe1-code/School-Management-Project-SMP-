@@ -11,23 +11,54 @@ import Checkboxes from '../Admin/Panel/Window/checkbox';
 import { getUsers } from '../../client/client';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Checkbox from '@mui/material/Checkbox';
 
-const checks = (<Checkboxes />);
+
+// const checks = (<Checkboxes />);
 
 function NewwindowTable() {
+  const label = { inputprops: { 'arial-label': "checkbox" } };
   const [users, setUsers] = useState([]);
+  const [userID, setUserID] = useState([]);
+
+  let addUser = []
 
   useEffect(() => {
     fetchdata();
   }, []);
 
+  const handleCheck4 = (data, e) => {
+
+    const { userid } = data;
+
+
+    if (e.target.checked) {
+
+      // users = users.push('hello')
+      // console.log('jjjjjjjjjjjj', e.target.checked)
+      addUser.push(userid);
+      console.log("hhhhhhhhaaa", addUser);
+    }
+    else {
+      addUser = addUser.filter((element) => element !== userid)
+      console.log("remooooooove", addUser)
+    }
+
+
+
+
+  }
+
   async function fetchdata() {
     const data = await getUsers();
     if (data) {
-
       const members = data.data.map((item) => {
-        // const { fullname } = item.fullname;
-        return [item.fullname, checks];
+        const { fullname, userid } = item;
+
+
+        console.log(userid)
+        return [fullname, <Checkbox {...label} onChange={(e) => handleCheck4(item, e)} />
+        ];
       })
       console.log(members)
 
@@ -132,12 +163,13 @@ function NewwindowTable() {
 
   return (
     <Paper style={{ height: 450, width: '330px' }}>
-      <TableVirtuoso
+      {userID && <TableVirtuoso
         data={rows}
         components={VirtuosoTableComponents}
         fixedHeaderContent={fixedHeaderContent}
         itemContent={rowContent}
-      />
+      />}
+      {console.log("wwwwwwwwww", userID)}
     </Paper>
   );
 }
