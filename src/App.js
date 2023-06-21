@@ -37,7 +37,6 @@ function App() {
         <Route path="/accountant" element={<AccountantPanel />} />
         <Route path="/approve" element={<Approve />} />
         <Route path="/resetpassword" element={<Reset />} />
-        <Route path="/virtuoso" element={<NewwindowTable />} />
       </Routes>
 
     </div>

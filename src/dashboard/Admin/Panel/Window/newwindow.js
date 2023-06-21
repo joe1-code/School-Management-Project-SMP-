@@ -10,8 +10,8 @@ import { reducerf } from "../../../../store";
 
 function Newwindow() {
   const [Customization, setCustomization] = useState(false);
-  const { windowMembers } = useSelector((state) => state);
-  console.log("hoooooooooooooyaaaaa", windowMembers)
+  // const { windowMembers } = useSelector((state) => state.store.initialStore);
+  // console.log("hoooooooooooooyaaaaa", windowMembers)
 
   const options = [
     { value: 'daily', label: 'Daily' },
