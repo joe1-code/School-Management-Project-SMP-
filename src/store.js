@@ -21,8 +21,8 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 import { Reducer } from './reducer';
 
 const initialStore = {
- phoneNo: ''
-
+ phoneNo: '',
+ windowMembers: []
 }
 
 const storeSlice = createSlice({

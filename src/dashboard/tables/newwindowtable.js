@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useDispatch } from "react-redux";
+import { reducerf } from "../../store";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,11 +9,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { TableVirtuoso } from 'react-virtuoso';
+import { useSelector } from "react-redux";
+import { useEffect, useState } from 'react';
 import Checkboxes from '../Admin/Panel/Window/checkbox';
 import { getUsers } from '../../client/client';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
+
 
 
 // const checks = (<Checkboxes />);
@@ -20,6 +23,10 @@ function NewwindowTable() {
   const label = { inputprops: { 'arial-label': "checkbox" } };
   const [users, setUsers] = useState([]);
   const [userID, setUserID] = useState([]);
+  const { windowMembers } = useSelector((state) => state.store.initialStore);
+
+
+  const dispatch = useDispatch();
 
   let addUser = []
 
@@ -28,26 +35,38 @@ function NewwindowTable() {
   }, []);
 
   const handleCheck4 = (data, e) => {
+    const { userid } = data.data;
 
-    const { userid } = data;
-
+    console.log("IDs", userid);
 
     if (e.target.checked) {
 
-      // users = users.push('hello')
-      // console.log('jjjjjjjjjjjj', e.target.checked)
       addUser.push(userid);
-      console.log("hhhhhhhhaaa", addUser);
+      // addUser = [...addUser]
+      // let newdat = addUser
+      console.log("added members in array", addUser);
+      dispatch(reducerf({ windowMembers: [...addUser] }));
+
     }
     else {
       addUser = addUser.filter((element) => element !== userid)
-      console.log("remooooooove", addUser)
+      console.log("members left in array", addUser)
+      dispatch(reducerf({ windowMembers: [...addUser] }));
+
     }
 
-
-
-
   }
+
+
+  function CheckBox(item) {
+    return (
+      <div>
+        <input type="checkbox" onClick={(e) => handleCheck4(item, e)} />
+      </div>
+    )
+  }
+
+
 
   async function fetchdata() {
     const data = await getUsers();
@@ -57,7 +76,9 @@ function NewwindowTable() {
 
 
         console.log(userid)
-        return [fullname, <Checkbox {...label} onChange={(e) => handleCheck4(item, e)} />
+        // return [fullname, <Checkbox {...label} onChange={(e) => handleCheck4(item, e)} />]
+        return [fullname, <CheckBox data={item} />
+
         ];
       })
       console.log(members)
@@ -170,8 +191,10 @@ function NewwindowTable() {
         itemContent={rowContent}
       />}
       {console.log("wwwwwwwwww", userID)}
+      <button id="butreg" variant="outlined" >Submit</button>
     </Paper>
   );
-}
 
-export default NewwindowTable;
+
+}
+export default React.memo(NewwindowTable);
