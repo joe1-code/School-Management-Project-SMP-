@@ -146,7 +146,8 @@ export const postCode = async (payload) => {
 
 export const registerNewwindow = async (payload) => {
  try {
-  const windowRes = await instance.post("/newwindow", { ...payload });
+  const response = await instance.post("/regwindow", { ...payload });
+  return response;
  }
  catch (error) {
   console.log("error in registering new window", error);

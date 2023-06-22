@@ -35,20 +35,18 @@ function NewwindowTable() {
   const handleCheck4 = (data, e) => {
     const { userid } = data;
 
-    console.log("IDs", userid);
 
     if (e.target.checked) {
 
       addUser.push(userid);
-      // addUser = [...addUser]
-      // let newdat = addUser
-      console.log("added members in array", addUser);
+
+      // console.log("added members in array", addUser);
       dispatch(reducerf({ windowMembers: [...addUser] }));
 
     }
     else {
       addUser = addUser.filter((element) => element !== userid)
-      console.log("members left in array", addUser)
+      // console.log("members left in array", addUser)
       dispatch(reducerf({ windowMembers: [...addUser] }));
 
     }
@@ -64,7 +62,7 @@ function NewwindowTable() {
         const { fullname, userid } = item;
 
 
-        console.log(userid)
+        // console.log(userid)
         return [fullname, <Checkbox {...label} onChange={(e) => handleCheck4(item, e)} />
         ]
 
@@ -178,8 +176,8 @@ function NewwindowTable() {
         fixedHeaderContent={fixedHeaderContent}
         itemContent={rowContent}
       />}
-      {console.log("wwwwwwwwww", userID)}
-      <button id="butreg" variant="outlined" >Submit</button>
+      {/* {console.log("wwwwwwwwww", userID)} */}
+      {/* <button id="butreg" variant="outlined" >Submit</button> */}
     </Paper>
   );
 

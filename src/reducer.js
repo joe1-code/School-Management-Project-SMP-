@@ -32,5 +32,5 @@
 
 export const Reducer = (state, action) => {
  state.initialStore = { ...state.initialStore, ...action.payload };
- console.log('9999999999999999', state.initialStore)
+ // console.log('9999999999999999', state.initialStore)
 };
