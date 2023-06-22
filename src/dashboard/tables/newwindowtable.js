@@ -56,15 +56,6 @@ function NewwindowTable() {
   }
 
 
-  // function CheckBox(item) {
-  //   return (
-  //     <div>
-  //       <input type="checkbox" onClick={(e) => handleCheck4(item, e)} />
-  //     </div>
-  //   )
-  // }
-
-
 
   async function fetchdata() {
     const data = await getUsers();
@@ -76,9 +67,7 @@ function NewwindowTable() {
         console.log(userid)
         return [fullname, <Checkbox {...label} onChange={(e) => handleCheck4(item, e)} />
         ]
-        // return [fullname, <CheckBox data={item} />
 
-        // ];
       })
       console.log(members)
 

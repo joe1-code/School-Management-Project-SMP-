@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import Select from 'react-select';
@@ -6,12 +6,23 @@ import { useDispatch, useSelector } from "react-redux";
 import NewwindowTable from "../../../tables/newwindowtable";
 import { duration } from "@mui/material";
 import { reducerf } from "../../../../store";
+import { registerNewwindow } from "../../../../client/client";
 
 
 function Newwindow() {
   const [Customization, setCustomization] = useState(false);
-  // const { windowMembers } = useSelector((state) => state.store.initialStore);
-  // console.log("hoooooooooooooyaaaaa", windowMembers)
+  const { windowMembers } = useSelector((state) => state.store.initialStore);
+  const [Loading, setLoading] = useState('');
+  const [selectedOption, setSelectedOPtion] = useState('');
+
+  const startdate = useRef('');
+  const payamount = useRef('');
+  const durationOne = useRef('');
+  const receivingpeople = useRef('');
+  const total = useRef('');
+  const durationTwo = useRef('');
+  const participators = useRef('');
+  const formref = useRef('');
 
   const options = [
     { value: 'daily', label: 'Daily' },
@@ -45,6 +56,19 @@ function Newwindow() {
     );
   }
 
+  async function HandleNewwindow() {
+    try {
+      setLoading(true)
+
+      // if (
+
+      //   )
+    }
+    catch (error) {
+
+    }
+  }
+
   return (
     <Card>
 
@@ -54,6 +78,9 @@ function Newwindow() {
             <TextField
               label="Start Date"
               margin="normal"
+              inputRef={startdate}
+              ref={formref}
+              onKeyDown={handleKeyDown}
               size="small"
               InputLabelProps={{ type: { fontSize: 15 } }}
             />
