@@ -176,8 +176,7 @@ function NewwindowTable() {
         fixedHeaderContent={fixedHeaderContent}
         itemContent={rowContent}
       />}
-      {/* {console.log("wwwwwwwwww", userID)} */}
-      {/* <button id="butreg" variant="outlined" >Submit</button> */}
+
     </Paper>
   );
 

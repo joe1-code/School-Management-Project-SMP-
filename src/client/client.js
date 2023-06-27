@@ -172,7 +172,20 @@ export const getUsers = async () => {
  }
 };
 
+export const windowUsers = async () => {
+ try {
+  const windUsers = await instance.get('/windowdata');
+  if (windUsers) {
+   return windUsers;
+  }
+ }
+ catch (error) {
+  console.log('error in fetching window data', error);
+ }
+}
 
+
+//------------------------logout endpoint------------------------------
 
 export const logout = async () => {
  localStorage.clear();
