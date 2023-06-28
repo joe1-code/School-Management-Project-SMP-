@@ -43,7 +43,7 @@ function Login() {
             autoDismiss: true
           });
 
-          navigate('/dashboard');
+          window.location.replace('/dashboard');
           return ('logged In');
 
         }
