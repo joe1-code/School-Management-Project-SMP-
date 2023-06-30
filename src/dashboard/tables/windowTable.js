@@ -18,17 +18,56 @@ function WindowDataTable() {
   }, []);
 
   async function windowShow() {
-    const response = await windowUsers();
+    try {
+      const response = await windowUsers();
 
-    if (response) {
-      const datashow = response.data.map((element) => {
-        const { startdate } = element;
-      })
-      console.log('this my response', datashow);
+      // destructuring startdate value from a response object
+      const startdate = response.data[0].startdate;
+      const receivers = response.data[0].receivers;
+      console.log("this is receivers", receivers)
+      console.log('this is startdate', startdate);
+
+      const enddateResults = enddates(startdate, receivers);
+      console.log("this is end date:", enddateResults);
+
 
     }
+
+    catch (error) {
+      console.log('error', error)
+    }
+
   }
 
+
+
+  //  calculate for an endcycle logic
+  function enddates(startdate, receivers) {
+    console.log("testssssssssss")
+    //parse the startdate
+    const startdateObj = new Date(startdate);
+
+    //calculate the enddate after a day
+    const enddateDay = new Date(startdateObj.getTime() + receivers * 24 * 60 * 60 * 1000);
+    console.log('this is enddateday', enddateDay);
+
+
+    // calculate the enddate after a week
+    const enddateWeek = new Date(startdateObj.getTime() + (receivers * 7) * 24 * 60 * 60 * 1000);
+
+    // calculate the enddate after a month
+    const enddateMonth = new Date(startdateObj.getTime() + (receivers * 30) * 24 * 60 * 60 * 1000);
+
+    return {
+      enddateDay: enddateDay,
+      enddateWeek: enddateWeek,
+      enddateMonth: enddateMonth
+    }
+
+
+
+
+  }
 
 
 
