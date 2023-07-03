@@ -29,14 +29,10 @@ function WindowDataTable() {
       // destructuring startdate value from a response object
       const startdate = response.data[0].startdate;
       const receivers = response.data[0].receivers;
-      // const { startdate, receivers } = response.data[0].
 
       //update the state using the received values
       setStartdate(startdate);
       setReceivers(receivers);
-
-      // console.log("this is receivers", receivers)
-      // console.log('this is startdate', startdate);
 
       const results = enddates(startdate, receivers);
 
@@ -87,19 +83,11 @@ function WindowDataTable() {
 
 
   function WindowData(id, startcycle, endcycle, actions) {
-    return { id, startcycle, endcycle: endcycle.value, actions };
+    return { id, startcycle: { value: startcycle.substring(0, 10) }, endcycle: endcycle && endcycle.value ? endcycle.value.split('T')[0] : 'N/A', actions };
   }
 
 
-  const windowActions = (<div><VisibilityIcon /> <CreateIcon /></div>);
-
-  console.log("sttatatata", startdate)
-
-  // if (!(startdate instanceof Date)) {
-  //   console.log("startdate is not a Date object.");
-  //   return <div>Error: Invalid start date.</div>; // or render an error message
-  // }
-  // const formattedStartdate = startdate.toLocaleDateString();
+  const windowActions = (<div><VisibilityIcon /></div>);
 
   const rows = [
 
@@ -126,7 +114,7 @@ function WindowDataTable() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell align='right'>{row.id}</TableCell>
-              <TableCell component="th" scope="row">{row.startcycle ? row.startcycle.value : 'N/A'}</TableCell>
+              <TableCell component="th" scope="row">{row.startcycle.value ? row.startcycle.value : 'N/A'}</TableCell>
               <TableCell align="right">{row.endcycle ? row.endcycle : 'N/A'}</TableCell>
               <TableCell align="right">{row.actions}</TableCell>
 
