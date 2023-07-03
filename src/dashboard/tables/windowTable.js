@@ -87,7 +87,7 @@ function WindowDataTable() {
   }
 
 
-  const windowActions = (<div><VisibilityIcon /></div>);
+  const windowActions = (<div><VisibilityIcon /><CreateIcon /></div>);
 
   const rows = [
 
@@ -97,36 +97,39 @@ function WindowDataTable() {
 
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 380 }} aria-label="simple-table">
-        <TableHead>
-          <TableRow>
-            <TableCell style={{ fontSize: 16, fontWeight: "bold" }}>S/N</TableCell>
-            <TableCell style={{ fontSize: 16, fontWeight: "bold" }}>StartCycle</TableCell>
-            <TableCell align="right" style={{ fontSize: 16, fontWeight: "bold" }}>EndCycle</TableCell>
-            <TableCell align="right" style={{ fontSize: 16, fontWeight: "bold" }}>Actions</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.startcycle}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell align='right'>{row.id}</TableCell>
-              <TableCell component="th" scope="row">{row.startcycle.value ? row.startcycle.value : 'N/A'}</TableCell>
-              <TableCell align="right">{row.endcycle ? row.endcycle : 'N/A'}</TableCell>
-              <TableCell align="right">{row.actions}</TableCell>
+    <div style={{ overflowY: 'auto', maxHeight: '300px' }}>
 
-
-
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 380 }} aria-label="simple-table">
+          <TableHead>
+            <TableRow>
+              <TableCell style={{ fontSize: 16, fontWeight: "bold" }}>S/N</TableCell>
+              <TableCell style={{ fontSize: 16, fontWeight: "bold" }}>StartCycle</TableCell>
+              <TableCell align="right" style={{ fontSize: 16, fontWeight: "bold" }}>EndCycle</TableCell>
+              <TableCell align="right" style={{ fontSize: 16, fontWeight: "bold" }}>Actions</TableCell>
             </TableRow>
-          )
-          )}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.startcycle}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell align='right'>{row.id}</TableCell>
+                <TableCell component="th" scope="row">{row.startcycle.value ? row.startcycle.value : 'N/A'}</TableCell>
+                <TableCell align="right">{row.endcycle ? row.endcycle : 'N/A'}</TableCell>
+                <TableCell align="right">{row.actions}</TableCell>
 
+
+
+              </TableRow>
+            )
+            )}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+    </div>
   )
 }
 
