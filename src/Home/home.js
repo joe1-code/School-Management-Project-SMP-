@@ -7,12 +7,16 @@ import './home.css';
 
 function Login(){
     return(
+
         <div id="container">
+           <div>
+            <h3>ManagementPortal.com</h3>
+           </div>
               <Card id="home-card">
             <div id="home"> 
               <TextField   
-                mediumWidth
-                InputLabelProps={{ style: { fontSize: 15 } }}
+                fullWidth
+                InputLabelProps={{ style: { fontSize: 13 } }}
                 size="small"
                 id="user"
                 label="Username"
@@ -21,8 +25,8 @@ function Login(){
               
 
               <TextField
-                mediumWidth
-                InputLabelProps={{ style: { fontSize: 15 } }}
+                fullWidth
+                InputLabelProps={{ style: { fontSize: 13 } }}
                 size="small"
                 id="pass"
                 label="Password"
@@ -31,12 +35,15 @@ function Login(){
                 margin="normal"
               />
             
-               <Link href="/forgotpassword" style={{ color: "blue" }}>Forgot Password?</Link>
+               
             
             </div>
+            <div id="forgotPass">
+              <Link href="/forgotpassword" style={{ color: "black", fontSize:13}}>Forgot Password?</Link>
+            </div>
            
-            <div>
-            <button id="but-log">login</button>
+            <div id="butlog-div">
+            <button id="but-log" style={{color:'white', size:'bolder'}}>Sign In</button>
             </div>
         </Card>
         </div>

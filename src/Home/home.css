@@ -1,6 +1,6 @@
 #container{
-    background-color: green;
-    height: 500px;
+    background-color: #fafafa;
+    height: 800px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -9,19 +9,45 @@
 
 }
 #home-card{
-    background-color: aqua;
-    width: 25%;
-    height: 400px;
+    background-color: #fafafa;
+    width: 24%;
+    height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 10px;
+    border-radius: 10px;
+    padding-top: 50px;
 }
 #home{
-    background-color: red;
+    background-color: #fafafa;
     display: flex;
     flex-direction: column;
-    height: 150px;
+    height: 140px;
     width: 85%;
+    gap: 15px;
+}
+#forgotPass{
+    display: flex;
+    justify-content: flex-end;    
+    width: 85%;
+    height: 20px;
+}
+#butlog-div{
+    height: 30px;
+    width: 85%;
+}
+#but-log{
+    height: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    background-color: rgb(32, 32, 114);
+    border-radius: 8px;
+}
+#but-log:hover{
+    cursor: pointer;
+    background-color: rgb(23, 23, 105);
 }
