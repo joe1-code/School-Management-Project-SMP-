@@ -33,6 +33,9 @@
     width: 85%;
     height: 20px;
 }
+#forgotPass:hover{
+    cursor: pointer;
+}
 #butlog-div{
     height: 30px;
     width: 85%;

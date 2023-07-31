@@ -1,0 +1,41 @@
+#reset-container{
+    background-color: #fafafa;
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#reset-title{
+    margin-top: 80px;
+}
+
+#reset-card{
+    background-color: #fafafa;
+    width: 24%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    gap: 25px;
+}
+#reset-fields{
+    width: 85%;
+}
+#resetbutton-div{
+    width: 85%;
+    height: 35px;
+}
+#resetbutton{
+    background-color: #2575a7 !important;
+    width: 100%;
+    height: 35px;
+    border-radius: #2575a7 !important;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: white;
+    border-radius: 4px;
+}

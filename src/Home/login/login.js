@@ -2,10 +2,12 @@ import React from "react";
 import { Card } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import Link from "@mui/material/Link";
+import { useNavigate } from "react-router-dom";
 
 import './login.css';
 
 function Login(){
+  const navigate = useNavigate();
     return(
 
         <div id="container">
@@ -39,11 +41,11 @@ function Login(){
             
             </div>
             <div id="forgotPass">
-              <Link href="/forgotpassword" style={{ color: "black", fontSize:13}}>Forgot Password?</Link>
+              <Link onClick={()=>{window.location.replace("/Auth0/forgotPasscode")}} style={{ color: "black", fontSize:13}}>Forgot Password?</Link>
             </div>
            
             <div id="butlog-div">
-            <button id="but-log" style={{color:'white', size:'bolder'}}>Sign In</button>
+            <button id="but-log" style={{color:'white', size:'bolder'}} onClick={()=>{window.location.replace("/Dashboard/classes")}}>Sign In</button>
             </div>
         </Card>
         </div>
