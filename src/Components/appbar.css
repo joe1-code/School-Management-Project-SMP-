@@ -4,4 +4,25 @@
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+   
+    position: fixed;
+    top: 20px;
+    left: 0px;
+    right: 0px;
+    z-index: 9999; /* Adjust the z-index as needed to ensure the navbar appears above other content */
 }
+/* appbar.css */
+.pushed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999; /* Adjust the z-index as needed to ensure the navbar appears above other content */
+    display: flex;
+    justify-content: space-between;
+    background-color: #2B3140; /* Add your preferred background color here */
+    color: #fff; /* Add your preferred text color here */
+  }
+  
+  /* Add any additional styles or customizations specific to the navbar as needed */
+  

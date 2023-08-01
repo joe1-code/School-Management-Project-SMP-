@@ -36,7 +36,7 @@ export default function ManagementNav() {
   return (
     <Stack spacing={2} sx={{ flexGrow: 1 }}>
       <ThemeProvider theme={darkTheme}>
-        <AppBar position="static" color="primary" enableColorOnDark id='typo-div'>
+        <AppBar position="static" className='pushed' enableColorOnDark id='typo-div'>
           {appBarLabel('classes')}
           {appBarLabel('management')}
         </AppBar>
